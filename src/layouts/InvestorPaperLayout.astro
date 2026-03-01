@@ -119,6 +119,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         color: var(--revenue);
       }
 
+      .logo img {
+        height: 45px;
+        width: auto;
+        display: block;
+      }
+
       /* --- Hamburger Button --- */
       .hamburger-btn {
         display: flex;
@@ -353,8 +359,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         .main-content {
           padding: var(--spacing-2) 0;
-          width: 100vw;
-          max-width: 100vw;
+          width: 100%;
           overflow-x: hidden;
         }
 
