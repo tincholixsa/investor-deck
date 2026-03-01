@@ -1,0 +1,69 @@
+---
+interface Props {
+  notes: string[];
+}
+const { notes } = Astro.props;
+---
+
+{notes && notes.length > 0 && (
+  <aside class="footnotes" role="doc-endnotes">
+    <ol class="footnotes__list">
+      {notes.map((note, i) => (
+        <li class="footnotes__item" id={`fn-${i + 1}`}>
+          <span class="footnotes__number">{i + 1}</span>
+          <span class="footnotes__text" set:html={note} />
+        </li>
+      ))}
+    </ol>
+  </aside>
+)}
+
+<style>
+  .footnotes {
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footnotes__list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    counter-reset: none !important;
+  }
+
+  .footnotes__item {
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+    margin-bottom: 4px !important;
+    padding-left: 0 !important;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  .footnotes__item::before {
+    display: none !important;
+  }
+
+  .footnotes__number {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.65rem;
+    color: var(--revenue);
+    min-width: 14px;
+    flex-shrink: 0;
+  }
+
+  .footnotes__text {
+    font-style: italic;
+  }
+
+  .footnotes__text :global(strong) {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--text);
+  }
+</style>

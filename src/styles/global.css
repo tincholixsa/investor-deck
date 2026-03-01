@@ -1,0 +1,314 @@
+:root {
+  /* LIXSA OFFICIAL PALETTE (v1.4) */
+  --title: #1b1a1b;
+  --text: #1b1a1b;
+  --text-secondary: rgba(27, 26, 27, 0.7);
+  --bg: #ffffff;
+  --bg-soft: #e3dbff;
+  --border: #bdb4d9;
+
+  /* METRICS SEMANTICS (v1.4) */
+  --revenue: #7f4cf5;
+  --growth: #6645ed;
+  --target: #4c6cf5;
+  --costs: #1b1a1b;
+  --positive: #16A34A;
+  --negative: #DC2626;
+  --warning: #F59E0B;
+
+  /* WEB CHART EXTENDED PALETTE (Max 6 recomended, up to 10) */
+  --chart-01: #7f4cf5;
+  /* Lixsa Purple 1 */
+  --chart-02: #4c6cf5;
+  /* Lixsa Blue */
+  --chart-03: #986ef5;
+  /* Lixsa Violet */
+  --chart-04: #312f82;
+  /* Lixsa Indigo */
+  --chart-05: #0EA5E9;
+  /* Cyan */
+  --chart-06: #14B8A6;
+  /* Teal */
+  --chart-07: #F97316;
+  /* Orange (highlight only) */
+  --chart-08: #A855F7;
+  /* Purple Alt */
+  --chart-09: #EC4899;
+  /* Magenta */
+  --chart-10: #8B5CF6;
+  /* Violet Alt */
+
+  /* BASE ALIASES */
+  --color-brand: var(--revenue);
+  --color-brand-light: var(--growth);
+
+  /* TYPOGRAPHY */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Outfit', var(--font-family-base);
+
+  /* SPACING & BORDERS */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --spacing-6: 3rem;
+  --spacing-8: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+html {
+  scroll-padding-top: calc(85px + var(--spacing-6));
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--title);
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-3);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-brand-light);
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  background-color: var(--color-brand-light);
+  transform: translateY(-1px);
+}
+
+/* Base utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .layout-grid {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+/* Content spacing */
+p {
+  margin-bottom: var(--spacing-3);
+  color: var(--text-secondary);
+}
+
+.main-content ul {
+  margin-bottom: var(--spacing-3);
+  padding-left: 0;
+  list-style: none;
+  color: var(--text-secondary);
+}
+
+.main-content ul li {
+  margin-bottom: var(--spacing-3);
+  padding-left: 1.8rem;
+  position: relative;
+}
+
+.main-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--revenue);
+}
+
+.main-content ol {
+  margin-bottom: var(--spacing-3);
+  padding-left: 0;
+  list-style: none;
+  counter-reset: ol-counter;
+  color: var(--text-secondary);
+}
+
+.main-content ol li {
+  counter-increment: ol-counter;
+  margin-bottom: var(--spacing-3);
+  padding-left: 2.4rem;
+  position: relative;
+}
+
+.main-content ol li::before {
+  content: counter(ol-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--revenue);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font-family-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* STYLED MARKDOWN TABLES */
+.main-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.main-content thead tr {
+  background: linear-gradient(135deg, var(--revenue) 0%, var(--target) 100%);
+}
+
+.main-content thead th {
+  padding: 12px 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  white-space: nowrap;
+  border: none;
+}
+
+.main-content tbody tr {
+  transition: background-color 0.15s;
+}
+
+.main-content tbody tr:nth-child(odd) {
+  background-color: #fafbfc;
+}
+
+.main-content tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.main-content tbody tr:hover {
+  background-color: #f1f0ff;
+}
+
+.main-content tbody td {
+  padding: 10px 16px;
+  color: var(--text-secondary);
+  border: none;
+  border-top: 1px solid #f1f5f9;
+}
+
+.main-content tbody td:first-child {
+  font-weight: 600;
+  color: var(--title);
+}
+
+.main-content tbody td strong {
+  color: var(--title);
+}
+
+/* MOBILE HEADING SIZE OVERRIDES */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .main-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -1,0 +1,65 @@
+---
+import InvestorPaperLayout from '../../../layouts/InvestorPaperLayout.astro';
+import Section from '../../../components/sections/Section.astro';
+import EvidenceBlock from '../../../components/sections/EvidenceBlock.astro';
+import KpiCards from '../../../components/kpi/KpiCards.astro';
+import MDXHeading from '../../../components/sections/MDXHeading.astro';
+import Metric from '../../../components/MetricTooltip.astro';
+import Footnotes from '../../../components/Footnotes.astro';
+import * as InitialEchartsWidgets from '../../../components/charts/DashboardWidgets'; // we'll create this to wrap Echarts with data
+
+// Import all MDX chapters from content directory
+const chapters = await Astro.glob('../../../content/paper/es/*.mdx');
+// Astro.glob returns them in alphabetical order of filename, so 00, 01, 02... works perfectly.
+---
+
+<InvestorPaperLayout title="Lixsa - Plan">
+  <div class="paper-top">
+    <h1>Lixsa Investor Paper</h1>
+    <p class="subtitle">La IA conversacional que convierte el soporte al cliente en un motor de ingresos. Descubre nuestra tesis de inversión, tracción real y el plan para escalar a +€3M ARR en 2030.</p>
+    <div class="metadata">
+      <span>Actualizado: <strong id="last-updated">01/03/2026</strong></span>
+      <span>Versión del Modelo: <strong>v23 — Escenario Base</strong></span>
+    </div>
+  </div>
+
+  <div class="paper-body">
+    {chapters.map(chapter => (
+      <chapter.Content 
+        components={{
+          Section,
+          EvidenceBlock,
+          KpiCards,
+          Metric,
+          Footnotes,
+          h3: MDXHeading
+        }} 
+      />
+    ))}
+  </div>
+</InvestorPaperLayout>
+
+<style>
+  .paper-top {
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .paper-top h1 {
+    margin-top: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  .metadata {
+    display: flex;
+    gap: var(--spacing-4);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-2);
+  }
+</style>

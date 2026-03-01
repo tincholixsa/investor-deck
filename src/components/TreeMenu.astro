@@ -1,0 +1,324 @@
+---
+const menuItems = [
+  {
+    title: "00 Resumen",
+    id: "overview",
+    children: [
+      { title: "00.1 Resumen ejecutivo", id: "00-1-resumen-ejecutivo" },
+      { title: "00.2 KPIs", id: "00-2-kpis" },
+      { title: "00.3 La Demanda de Capital", id: "00-3-the-ask" },
+      { title: "00.4 Uso de los fondos", id: "00-4-use-of-proceeds" },
+      { title: "00.5 Hitos & timeline", id: "00-5-hitos-timeline" },
+    ]
+  },
+  {
+    title: "01 Tesis de inversión",
+    id: "tesis",
+    children: [
+      { title: "01.1 Por qué ahora", id: "01-1-por-que-ahora" },
+      { title: "01.2 Por qué Lixsa gana", id: "01-2-por-que-lixsa-gana" },
+      { title: "01.3 Lo que creemos que será verdad", id: "01-3-verdad" },
+    ]
+  },
+  {
+    title: "02 El problema",
+    id: "problema",
+    children: [
+      { title: "02.1 Dolor de mercado", id: "02-1-dolor" },
+      { title: "02.2 Coste operativo", id: "02-2-coste" },
+      { title: "02.3 Fuga de ingresos", id: "02-3-fuga" },
+    ]
+  },
+  {
+    title: "03 Producto",
+    id: "producto",
+    children: [
+      { title: "03.1 Qué es Lixsa", id: "03-1-que-es" },
+      { title: "03.2 Cómo funciona", id: "03-2-como-funciona" },
+      { title: "03.3 Canales & integraciones", id: "03-3-canales" },
+      { title: "03.4 Seguridad & privacidad", id: "03-4-seguridad" },
+    ]
+  },
+  {
+    title: "04 Tracción",
+    id: "traccion",
+    children: [
+      { title: "04.1 Clientes actuales", id: "04-1-clientes" },
+      { title: "04.2 Casos de uso", id: "04-2-casos" },
+      { title: "04.3 Testimonios", id: "04-3-testimonios" },
+      { title: "04.4 Dashboard de métricas", id: "04-4-dashboard" },
+    ]
+  },
+  {
+    title: "05 Mercado & competencia",
+    id: "mercado",
+    children: [
+      { title: "05.1 TAM / SAM / SOM", id: "05-1-tam" },
+      { title: "05.2 Panorama competitivo", id: "05-2-landscape" },
+      { title: "05.3 Diferenciación", id: "05-3-diferenciacion" },
+      { title: "05.4 Riesgos competitivos", id: "05-4-riesgos-competitivos" },
+      { title: "05.5 Distribución geográfica", id: "05-5-distribucion" },
+    ]
+  },
+  {
+    title: "06 Go-to-market",
+    id: "gtm",
+    children: [
+      { title: "06.1 Estrategia general", id: "06-1-resumen" },
+      { title: "06.2 Plan 2026", id: "06-2-plan-2026" },
+      { title: "06.3 Plan 2027", id: "06-3-plan-2027" },
+      { title: "06.4 Plan 2028–2030", id: "06-4-plan-2028-2030" },
+    ]
+  },
+  {
+    title: "07 Roadmap",
+    id: "roadmap",
+    children: [
+      { title: "07.1 Roadmap 2026", id: "07-1-2026" },
+      { title: "07.2 Roadmap 2027", id: "07-2-2027" },
+      { title: "07.3 Roadmap 2028–2030", id: "07-3-2028-2030" },
+    ]
+  },
+  {
+    title: "08 Plan financiero",
+    id: "financiero",
+    children: [
+      { title: "08.1 2026 base", id: "08-1-2026" },
+      { title: "08.2 2027", id: "08-2-2027" },
+      { title: "08.3 2028", id: "08-3-2028" },
+      { title: "08.4 2029", id: "08-4-2029" },
+      { title: "08.5 2030", id: "08-5-2030" },
+      { title: "08.6 Supuestos", id: "08-6-supuestos" },
+      { title: "08.7 Escenarios & sensitivities", id: "08-7-escenarios" },
+      { title: "08.8 Unit economics", id: "08-8-unit" },
+    ]
+  },
+  {
+    title: "09 Riesgos & mitigaciones",
+    id: "riesgos",
+    children: []
+  },
+  {
+    title: "10 Equipo & gobierno",
+    id: "equipo",
+    children: [
+      { title: "10.1 Equipo", id: "10-1-equipo" },
+      { title: "10.2 Gobierno", id: "10-2-gobierno" },
+      { title: "10.3 Reporting a inversores", id: "10-3-reporting" },
+    ]
+  },
+  {
+    title: "11 Apéndice",
+    id: "apendice",
+    children: [
+      { title: "11.1 Definición de KPIs", id: "11-1-kpis" },
+      { title: "11.2 Tablas completas", id: "11-2-tablas" },
+      { title: "11.3 Glosario", id: "11-3-glosario" },
+      { title: "11.4 Legal / disclaimers", id: "11-4-legal" },
+    ]
+  }
+];
+
+// Helper to split the number and the text from the title
+const formatTitle = (title: string) => {
+  const match = title.match(/^([\d\.]+)\s*(.*)/);
+  if (match) {
+    return { number: match[1], text: match[2] };
+  }
+  return { number: '', text: title };
+};
+
+// Pre-process items beforehand so the Vite template renderer doesn't crash on function evaluation
+const formattedMenuItems = menuItems.map(section => ({
+  ...section,
+  ...formatTitle(section.title),
+  children: section.children.map(child => ({
+    ...child,
+    ...formatTitle(child.title)
+  }))
+}));
+---
+
+<nav class="tree-menu">
+  <ul class="level-1">
+    {formattedMenuItems.map(section => (
+      <li class="menu-section">
+        <a href={`#${section.id}`} class="menu-link category-link">
+          {section.number && <span class="nav-number">{section.number}</span>}
+          {section.text}
+        </a>
+        {section.children.length > 0 && (
+          <ul class="level-2">
+            {section.children.map(child => (
+              <li>
+                <a href={`#${child.id}`} class="menu-link sub-link">
+                  {child.number && <span class="nav-number">{child.number}</span>}
+                  {child.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  // Simple ScrollSpy Implementation for Island
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.menu-link');
+    const sections = Array.from(links).map(link => {
+      const url = new URL(link.href);
+      return document.getElementById(url.hash.substring(1));
+    }).filter(Boolean);
+
+    const intersectingIds = new Set();
+    let isScrolling = false;
+    let scrollTimeout;
+
+    // Handle clicks to prevent observer from overriding the selected item during smooth scroll
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        isScrolling = true;
+        clearTimeout(scrollTimeout);
+        
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // Force the content underline to activate instantly on click
+        const targetId = new URL(link.href).hash.substring(1);
+        const targetSec = document.getElementById(targetId);
+        
+        document.querySelectorAll('.is-underlined').forEach(el => el.classList.remove('is-underlined'));
+        if (targetSec) {
+          // If it's a sub-section div, the H3 is a direct child.
+          // If it's a main section, the H2 is inside .paper-section-header
+          const heading = targetSec.querySelector(':scope > h3, :scope > .paper-section-header > h2, :scope > .mdx-heading, :scope > .paper-section-header > .section-title');
+          if (heading) heading.classList.add('is-underlined');
+        }
+        
+        const parentList = link.closest('.level-2');
+        if (parentList) {
+          parentList.classList.add('expanded');
+        }
+
+        // Re-enable observer after estimated scroll duration
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          intersectingIds.add(entry.target.id);
+        } else {
+          intersectingIds.delete(entry.target.id);
+        }
+      });
+
+      if (isScrolling) return;
+
+      // Find the best intersecting section by checking its distance from the top header pad
+      let activeSection = null;
+      let minDistance = Infinity;
+
+      sections.forEach(sec => {
+        if (sec && intersectingIds.has(sec.id)) {
+          const rect = sec.getBoundingClientRect();
+          // The header offset is ~135px. Use <= so that specific child items 
+          // overwrite their generic parent sections if they share the same 'top' coordinate.
+          const distance = Math.abs(rect.top - 135);
+          if (distance <= minDistance) {
+            minDistance = distance;
+            activeSection = sec;
+          }
+        }
+      });
+
+      if (activeSection) {
+        document.querySelectorAll('.is-underlined').forEach(el => el.classList.remove('is-underlined'));
+        const heading = activeSection.querySelector(':scope > h3, :scope > .paper-section-header > h2, :scope > .mdx-heading, :scope > .paper-section-header > .section-title');
+        if (heading) heading.classList.add('is-underlined');
+
+        links.forEach(link => {
+          const url = new URL(link.href);
+          if (url.hash === `#${activeSection.id}`) {
+            link.classList.add('active');
+            const parentList = link.closest('.level-2');
+            if (parentList) {
+              parentList.classList.add('expanded');
+            }
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    }, { rootMargin: '-135px 0px -40% 0px' });
+
+    sections.forEach(sec => sec && observer.observe(sec));
+  });
+</script>
+
+
+
+<style>
+  .tree-menu {
+    font-size: 0.9rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-number {
+    font-size: 0.75em;
+    opacity: 0.7;
+    margin-right: var(--spacing-1);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .level-1 > li {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .level-2 {
+    padding-left: var(--spacing-3);
+    border-left: 1px solid var(--border);
+    margin-top: var(--spacing-1);
+    margin-left: var(--spacing-2);
+  }
+
+  .menu-link {
+    display: block;
+    padding: var(--spacing-1) 0;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  .menu-link:hover {
+    color: var(--text);
+  }
+
+  .category-link {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .sub-link {
+    font-size: 0.85rem;
+  }
+
+  .menu-link.active {
+    color: var(--revenue);
+    font-weight: 600;
+    background-color: rgba(102, 69, 237, 0.1); 
+    border-left: 3px solid var(--revenue);
+    padding-left: calc(var(--spacing-2) - 3px);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+</style>

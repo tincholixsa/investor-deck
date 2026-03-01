@@ -1,0 +1,61 @@
+import ClientsTable from '../../../components/charts/ClientsTable';
+import { HistoricalMrrChart } from '../../../components/charts/DashboardWidgets';
+
+
+<Section id="traccion" title="04. Tracción">
+<div id="04-1-clientes">
+### 04.1 Clientes actuales (proof)
+
+<EvidenceBlock title="Cohorte Enero 2026 — Datos reales (Stripe + Shopify Billing)">
+  17 clientes activos pagadores en enero 2026. A continuación los Top 5 por LTV neto histórico.
+</EvidenceBlock>
+
+<ClientsTable client:visible clients={[
+  { name: 'LIVE4LIFE', niche: 'Real Estate / alquiler habitaciones', start: 'Oct 2024', mrr: '€350', ltv: '€5.600', arpa: '€350' },
+  { name: 'DOMAINE BOUSQUET', niche: 'Wine & Spirits / bodega + enoturismo', start: 'Nov 2024', mrr: '€429', ltv: '€5.295', arpa: '€165' },
+  { name: 'NORTON', niche: 'Wine & Spirits', start: 'Jul 2025', mrr: '€250', ltv: '€1.750', arpa: '€250' },
+  { name: 'LA FOLIE', niche: 'Restaurantes', start: 'Jun 2025', mrr: '€277', ltv: '€1.519', arpa: '€217' },
+  { name: 'MOMOVEN', niche: 'Movilidad / alquiler motos', start: 'Oct 2025', mrr: '€445', ltv: '€1.445', arpa: '€361' },
+]} summaryLabel="Media resto de clientes" summaryValues={{ mrr: '€87', ltv: '€665', arpa: '€105' }} footerLabel="Total / Media global (17 clientes)" footerValues={{ mrr: '€2.625', ltv: '—', arpa: '€154' }} />
+
+</div>
+
+<div id="04-2-casos">
+### 04.2 Casos de uso
+
+Pendiente: documentar 3–5 casos con antes/después (DSO, recuperación, tiempo ahorro). Los verticales con tracción probada hasta ahora:
+
+- **Real Estate** — Gestión de comunicación con inquilinos y seguimiento de pagos.
+- **Wine & Spirits** — E‑commerce + enoturismo: campañas y soporte por WhatsApp.
+- **Restauración** — Reservas, pedidos y atención al cliente automatizada.
+- **Movilidad** — Alquiler de vehículos: onboarding y cobro recurrente.
+
+</div>
+
+<div id="04-3-testimonios">
+### 04.3 Testimonios
+
+<EvidenceBlock type="quote" title="Pendiente">
+  Incluir 3 testimonios reales (con permiso) y métricas asociadas de clientes activos.
+</EvidenceBlock>
+</div>
+
+<div id="04-4-dashboard">
+### 04.4 Dashboard de métricas
+
+<HistoricalMrrChart client:visible />
+
+<KpiCards data={[
+  { label: 'MRR total (bruto)', value: '€2.625', trend: 'Ene 2026 (Stripe + Shopify)', trendUp: true },
+  { label: 'Clientes pagadores', value: '17', trend: 'Cohorte Ene-2026', trendUp: true },
+  { label: 'ARPU', value: '€154,39', trend: 'MRR / Clientes', trendUp: true },
+  { label: 'Altas (nuevos)', value: '3', trend: 'Nuevos pagadores en Ene', trendUp: true },
+  { label: 'Churn logo', value: '17,6%', trend: '3 clientes perdidos (Dic→Ene)', trendUp: false },
+  { label: 'Churn MRR', value: '11,1%', trend: '€286 MRR perdido', trendUp: false },
+  { label: 'Marketing spend', value: '€1.625', trend: 'Meta + Mymco (sin WhatsApp)', trendUp: false },
+  { label: 'WhatsApp spend', value: '€516', trend: 'Gasto growth WhatsApp', trendUp: false },
+]} />
+
+</div>
+
+</Section>

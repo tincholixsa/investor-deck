@@ -1,0 +1,67 @@
+import { UseOfFundsPieChart, MilestonesTimeline } from '../../../components/charts/DashboardWidgets';
+
+<Section id="overview" title="00. Overview">
+
+<div id="00-1-resumen-ejecutivo">
+### 00.1 Resumen ejecutivo
+
+Lixsa es un SaaS B2B de automatización conversacional orientado a cobros y operaciones comerciales, con foco en time‑to‑value (horas) y comunicación moderna (WhatsApp) frente a software legacy.
+
+La plataforma permite a pymes y mid‑market automatizar ventas, soporte y campañas masivas a través de WhatsApp Business API, con módulos de voz (Q2 2026) y agente de negocio (Q4 2026) en roadmap.
+
+</div>
+
+<div id="00-2-kpis">
+### 00.2 KPIs iniciales (Actuals Enero 2026)
+
+<EvidenceBlock title="Métricas reales — Cohorte Enero 2026">
+  Datos consolidados a cierre de enero 2026 (Stripe + Shopify Billing). Estos son datos reales, no proyecciones.
+</EvidenceBlock>
+
+<KpiCards data={[
+  { label: 'MRR', value: '€2.625', trend: 'Stripe + Shopify Billing', trendUp: true },
+  { label: 'Clientes pagadores', value: '17', trend: 'Cohorte Ene-2026', trendUp: true },
+  { label: 'ARPU', value: '€154', trend: 'MRR / Clientes', trendUp: true },
+  { label: 'Churn logo', value: '17,6%', trend: '3 de 17 clientes (Dic→Ene)', trendUp: false },
+]} />
+
+<Footnotes notes={["Datos extraídos de Stripe Dashboard + Shopify Billing a cierre de enero 2026.", "Churn calculado como clientes perdidos en el mes / clientes activos al inicio del mes."]} />
+</div>
+
+<div id="00-3-the-ask">
+### 00.3 La Demanda de Capital
+
+El plan de financiación combina inversión privada y ENISA para alcanzar un total de **€850.000**:
+
+- **Ronda equity:** €550.000 (ampliación de capital + prima de emisión).
+- **ENISA:** €300.000 (préstamo participativo — línea *Startups y pymes*). No dilutivo, sin garantías.
+
+La ronda de equity refuerza la base de capital y la apalanca con financiación pública no dilutiva, manteniendo una estructura coherente con el criterio de cofinanciación que exige ENISA.
+
+<Footnotes notes={["ENISA exige cofinanciación privada equivalente; la ronda equity de €550K cumple este criterio.", "La línea ENISA Startups y pymes tiene carencia de 2-3 años y no requiere garantías."]} />
+</div>
+
+<div id="00-4-use-of-proceeds">
+### 00.4 Uso de los fondos
+
+- **Producto & Ingeniería (45%)** — Voz (Q2), agente de negocio (Q4), multi‑idioma, hardening, seguridad.
+- **Ventas & Marketing (40%)** — Motor outbound, partners, contenido, retargeting, expansión EU.
+- **Operaciones & Legal (15%)** — Soporte/CS, compliance (GDPR/voz), finanzas, reporting.
+
+<UseOfFundsPieChart client:visible />
+
+</div>
+
+<div id="00-5-hitos-timeline">
+### 00.5 Hitos & timeline
+
+- **Abr 2026:** Cierre ronda equity (objetivo).
+- **Jul 2026:** Lanzamiento voz — WhatsApp Calls + líneas telefónicas.
+- **Sep 2026:** Desembolso ENISA (objetivo).
+- **Oct 2026:** Lanzamiento Agente de negocio (upsell a base instalada).
+
+<MilestonesTimeline client:visible />
+
+</div>
+
+</Section>

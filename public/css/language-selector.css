@@ -1,0 +1,117 @@
+/* ── Language Selector (Investor Deck – Light Footer) ──────────────── */
+.lang-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+/* Trigger button — adapted for LIGHT footer */
+.lang-selector__trigger {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: transparent !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.82rem !important;
+    font-family: inherit !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+}
+
+.lang-selector__trigger:hover {
+    color: var(--revenue) !important;
+    border-color: var(--revenue) !important;
+    background: rgba(127, 76, 245, 0.05) !important;
+}
+
+.lang-selector__globe {
+    font-size: 16px !important;
+    opacity: 0.8 !important;
+}
+
+.lang-selector__label {
+    letter-spacing: 0.3px !important;
+}
+
+.lang-selector__arrow {
+    font-size: 11px !important;
+    opacity: 0.6 !important;
+    transition: transform 0.2s ease !important;
+    margin-left: -2px !important;
+}
+
+.lang-selector--open .lang-selector__arrow {
+    transform: rotate(180deg) !important;
+}
+
+/* Dropdown — opens upward */
+.lang-selector__dropdown {
+    position: absolute !important;
+    bottom: calc(100% + 8px) !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: translateY(8px) !important;
+    min-width: 150px !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    padding: 6px 0 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    z-index: 9999 !important;
+    text-align: left !important;
+}
+
+.lang-selector--open .lang-selector__dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Items */
+.lang-selector__item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 16px !important;
+    margin: 0 !important;
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    transition: all 0.15s ease !important;
+    cursor: pointer !important;
+    line-height: 1.2 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.lang-selector__item:hover {
+    background: var(--bg-soft) !important;
+    color: var(--title) !important;
+}
+
+.lang-selector__item--active {
+    background: rgba(127, 76, 245, 0.08) !important;
+    color: var(--revenue) !important;
+    font-weight: 600 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lang-selector__trigger {
+        font-size: 0.78rem !important;
+        padding: 5px 10px !important;
+    }
+
+    .lang-selector__dropdown {
+        min-width: 130px !important;
+    }
+}

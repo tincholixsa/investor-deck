@@ -1,0 +1,100 @@
+---
+export interface Props {
+  term: "TAM" | "SAM" | "SOM" | "ROI" | "CAC" | "OPEX" | "LTV" | "Payback" | "NRR" | "ARR" | "DSO" | "Clientes" | "LTV/CAC" | "Valoración pre-money" | "Churn";
+}
+
+const { term } = Astro.props;
+
+export const termDictionary = {
+  TAM: "Total Addressable Market. Todo el mercado posible disponible para el producto o servicio.",
+  SAM: "Serviceable Available Market. La cuota del TAM a la que teóricamente puede llegar la empresa a través de su modelo de negocio actual.",
+  SOM: "Serviceable Obtainable Market. La cuota del SAM que la empresa espera capturar de manera realista.",
+  ROI: "Return on Investment. Indicador financiero que mide la rentabilidad de una inversión respecto a su coste.",
+  CAC: "Customer Acquisition Cost. El coste de marketing y ventas necesario para ganar un nuevo cliente.",
+  OPEX: "Operating Expenses. Gastos operativos continuos asociados al funcionamiento diario del negocio.",
+  LTV: "Lifetime Value. La ganancia neta o ingresos totales que se espera genere un cliente durante toda su relación con la empresa.",
+  Payback: "El tiempo (en meses) necesario para recuperar el coste de adquisición (CAC) de un cliente a través de su margen bruto.",
+  NRR: "Net Retention Rate. Mide el crecimiento de los ingresos (MRR/ARR) retenidos de los clientes existentes, considerando ampliaciones, reducciones y cancelaciones.",
+  ARR: "Annual Recurring Revenue. Suscripciones o ingresos garantizados proyectados a 12 meses vista.",
+  DSO: "Days Sales Outstanding. El número promedio de días que tarda una empresa en cobrar los pagos después de realizar una venta.",
+  Clientes: "El número total de cuentas activas de pago de tipo corporativo o enterprise.",
+  "LTV/CAC": "Relación entre el valor de vida del cliente (LTV) y su coste de adquisición (CAC). Un ratio de 3x se considera estándar, y más de 4x refleja alta eficiencia.",
+  "Valoración pre-money": "El valor estimado de una empresa antes de recibir una nueva inyección de capital o financiación externa.",
+  Churn: "Tasa de cancelación de clientes. Porcentaje de clientes que dejan de utilizar el servicio en un periodo determinado. Un churn bajo indica alta retención y satisfacción."
+};
+
+const definition = termDictionary[term] || "Definición no disponible.";
+---
+
+<span class="metric-wrapper">
+  <span class="metric-term">{term}</span>
+  <span class="metric-tooltip">{definition}</span>
+</span>
+
+<style>
+  .metric-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .metric-term {
+    border-bottom: 2px dotted var(--text-secondary);
+    cursor: help;
+    font-weight: 500;
+  }
+  
+  .metric-term:hover {
+    color: var(--revenue);
+    border-bottom-color: var(--revenue);
+  }
+
+  /* The hidden CSS Tooltip */
+  .metric-tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    
+    background-color: var(--title);
+    color: var(--bg);
+    
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: normal;
+    text-align: left;
+    
+    /* Box bounds */
+    min-width: 250px;
+    max-width: 320px;
+    padding: var(--spacing-3);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    
+    /* Reveal Animation */
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  /* Tooltip Triangle */
+  .metric-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--title) transparent transparent transparent;
+  }
+
+  /* Trigger hover */
+  .metric-wrapper:hover .metric-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>

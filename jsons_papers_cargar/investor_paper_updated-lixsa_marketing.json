@@ -1,0 +1,2093 @@
+{
+  "_meta": {
+    "documentName": "Lixsa Investment Paper",
+    "version": "v1.0",
+    "exportDate": "28/02/2026",
+    "exportTimestamp": "2026-02-28T21:07:56.278Z",
+    "totalSections": 12,
+    "description": "Documento completo de inversión de Lixsa.ai. Contiene TODO el contenido del paper: texto, tablas, gráficas, KPIs, datos de clientes, métricas históricas, y competidores. La sección 'datasets' contiene los datos fuente de todos los componentes visuales (gráficas, tarjetas KPI, tablas de clientes). La sección 'sections' contiene la estructura y texto completo del documento organizado por secciones y subsecciones.",
+    "sourceExcel": "Lixsa_BusinessPlan_2026_2030_v23_paper_audit_ready.xlsx",
+    "auditNotes": "Este JSON es la fuente única de verdad del paper. Todos los datos visualizados en gráficas están en 'datasets' y referenciados desde las subsecciones mediante 'dataRef'. Los elementos de tipo 'table' contienen tablas markdown ya parseadas con headers y rows. Los elementos de tipo 'component' indican qué componente visual se renderiza en esa posición y apuntan a su dataset. Los 'flatText' permiten búsquedas rápidas de contenido."
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "title": "00. Overview",
+      "filename": "00-overview.mdx",
+      "subsections": [
+        {
+          "id": "00-1-resumen-ejecutivo",
+          "title": "00.1 Resumen ejecutivo",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Lixsa es un SaaS B2B de automatización conversacional orientado a cobros y operaciones comerciales, con foco en time‑to‑value (horas) y comunicación moderna (WhatsApp) frente a software legacy."
+            },
+            {
+              "type": "paragraph",
+              "content": "La plataforma permite a pymes y mid‑market automatizar ventas, soporte y campañas masivas a través de WhatsApp Business API, con módulos de voz (Q2 2026) y agente de negocio (Q4 2026) en roadmap."
+            }
+          ],
+          "flatText": "Lixsa es un SaaS B2B de automatización conversacional orientado a cobros y operaciones comerciales, con foco en time‑to‑value (horas) y comunicación moderna (WhatsApp) frente a software legacy. La plataforma permite a pymes y mid‑market automatizar ventas, soporte y campañas masivas a través de WhatsApp Business API, con módulos de voz (Q2 2026) y agente de negocio (Q4 2026) en roadmap."
+        },
+        {
+          "id": "00-2-kpis",
+          "title": "00.2 KPIs iniciales (Actuals Enero 2026)",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Métricas reales — Cohorte Enero 2026"
+            },
+            {
+              "type": "paragraph",
+              "content": "Datos consolidados a cierre de enero 2026 (Stripe + Shopify Billing). Estos son datos reales, no proyecciones."
+            },
+            {
+              "type": "component",
+              "component": "KpiCards",
+              "dataRef": "inline"
+            }
+          ],
+          "flatText": "Datos consolidados a cierre de enero 2026 (Stripe + Shopify Billing). Estos son datos reales, no proyecciones."
+        },
+        {
+          "id": "00-3-the-ask",
+          "title": "00.3 La Demanda de Capital",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "El plan de financiación combina inversión privada y ENISA para alcanzar un total de **€850.000**:"
+            },
+            {
+              "type": "list_item",
+              "content": "**Ronda equity:** €550.000 (ampliación de capital + prima de emisión)."
+            },
+            {
+              "type": "list_item",
+              "content": "**ENISA:** €300.000 (préstamo participativo — línea *Startups y pymes*). No dilutivo, sin garantías."
+            },
+            {
+              "type": "paragraph",
+              "content": "La ronda de equity refuerza la base de capital y la apalanca con financiación pública no dilutiva, manteniendo una estructura coherente con el criterio de cofinanciación que exige ENISA."
+            }
+          ],
+          "flatText": "El plan de financiación combina inversión privada y ENISA para alcanzar un total de **€850.000**: **Ronda equity:** €550.000 (ampliación de capital + prima de emisión). **ENISA:** €300.000 (préstamo participativo — línea *Startups y pymes*). No dilutivo, sin garantías. La ronda de equity refuerza la base de capital y la apalanca con financiación pública no dilutiva, manteniendo una estructura coherente con el criterio de cofinanciación que exige ENISA."
+        },
+        {
+          "id": "00-4-use-of-proceeds",
+          "title": "00.4 Uso de los fondos",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Producto & Ingeniería (45%)** — Voz (Q2), agente de negocio (Q4), multi‑idioma, hardening, seguridad."
+            },
+            {
+              "type": "list_item",
+              "content": "**Ventas & Marketing (40%)** — Motor outbound, partners, contenido, retargeting, expansión EU."
+            },
+            {
+              "type": "list_item",
+              "content": "**Operaciones & Legal (15%)** — Soporte/CS, compliance (GDPR/voz), finanzas, reporting."
+            },
+            {
+              "type": "chart",
+              "chart": "UseOfFundsPieChart",
+              "dataRef": "datasets.00_overview.useOfFunds"
+            }
+          ],
+          "flatText": "**Producto & Ingeniería (45%)** — Voz (Q2), agente de negocio (Q4), multi‑idioma, hardening, seguridad. **Ventas & Marketing (40%)** — Motor outbound, partners, contenido, retargeting, expansión EU. **Operaciones & Legal (15%)** — Soporte/CS, compliance (GDPR/voz), finanzas, reporting."
+        },
+        {
+          "id": "00-5-hitos-timeline",
+          "title": "00.5 Hitos & timeline",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Abr 2026:** Cierre ronda equity (objetivo)."
+            },
+            {
+              "type": "list_item",
+              "content": "**Jul 2026:** Lanzamiento voz — WhatsApp Calls + líneas telefónicas."
+            },
+            {
+              "type": "list_item",
+              "content": "**Sep 2026:** Desembolso ENISA (objetivo)."
+            },
+            {
+              "type": "list_item",
+              "content": "**Oct 2026:** Lanzamiento Agente de negocio (upsell a base instalada)."
+            },
+            {
+              "type": "chart",
+              "chart": "MilestonesTimeline",
+              "dataRef": "datasets.00_overview.milestones"
+            }
+          ],
+          "flatText": "**Abr 2026:** Cierre ronda equity (objetivo). **Jul 2026:** Lanzamiento voz — WhatsApp Calls + líneas telefónicas. **Sep 2026:** Desembolso ENISA (objetivo). **Oct 2026:** Lanzamiento Agente de negocio (upsell a base instalada)."
+        }
+      ]
+    },
+    {
+      "id": "tesis",
+      "title": "01. Tesis de inversión",
+      "filename": "01-tesis.mdx",
+      "subsections": [
+        {
+          "id": "01-1-por-que-ahora",
+          "title": "01.1 Por qué ahora",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**WhatsApp Business Platform nueva era (Jul 2025):** Pricing por mensaje (template), utility templates gratis dentro de Customer Service Window — favorece agentes que resuelven rápido y controlan plantillas."
+            },
+            {
+              "type": "list_item",
+              "content": "**Pymes digitalizando comunicación comercial:** El 37,8% de micro‑empresas y el 69,7% de empresas 10+ usan medios sociales para interactuar con clientes (INE TIC 2024)."
+            },
+            {
+              "type": "list_item",
+              "content": "**IA accesible para PYME:** El 13,4% de micro‑empresas ya emplean IA — la curva de adopción acelera y el coste por inferencia se desploma."
+            },
+            {
+              "type": "list_item",
+              "content": "**Factura electrónica obligatoria:** La regulación fuerza trazabilidad digital, que es un gateway hacia automatización de cobros."
+            }
+          ],
+          "flatText": "**WhatsApp Business Platform nueva era (Jul 2025):** Pricing por mensaje (template), utility templates gratis dentro de Customer Service Window — favorece agentes que resuelven rápido y controlan plantillas. **Pymes digitalizando comunicación comercial:** El 37,8% de micro‑empresas y el 69,7% de empresas 10+ usan medios sociales para interactuar con clientes (INE TIC 2024). **IA accesible para PYME:** El 13,4% de micro‑empresas ya emplean IA — la curva de adopción acelera y el coste por inferencia se desploma. **Factura electrónica obligatoria:** La regulación fuerza trazabilidad digital, que es un gateway hacia automatización de cobros."
+        },
+        {
+          "id": "01-2-por-que-lixsa-gana",
+          "title": "01.2 Por qué Lixsa gana",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Time‑to‑value en horas, no meses** — Setup sin fricción con plantillas por vertical."
+            },
+            {
+              "type": "list_item",
+              "content": "**WhatsApp‑first nativo** — No es un add‑on a un helpdesk; es el canal core desde el día 1."
+            },
+            {
+              "type": "list_item",
+              "content": "**Bundle de valor completo** — Ventas + soporte + campañas + cobros en una sola plataforma."
+            },
+            {
+              "type": "list_item",
+              "content": "**Roadmap de monetización claro** — Voz (Q2 2026), agente de negocio (Q4 2026) como upsells naturales."
+            },
+            {
+              "type": "list_item",
+              "content": "**Equipo local + coste controlado** — Operamos desde Alicante con costes fundadores reducidos (€2.179/mes)."
+            }
+          ],
+          "flatText": "**Time‑to‑value en horas, no meses** — Setup sin fricción con plantillas por vertical. **WhatsApp‑first nativo** — No es un add‑on a un helpdesk; es el canal core desde el día 1. **Bundle de valor completo** — Ventas + soporte + campañas + cobros en una sola plataforma. **Roadmap de monetización claro** — Voz (Q2 2026), agente de negocio (Q4 2026) como upsells naturales. **Equipo local + coste controlado** — Operamos desde Alicante con costes fundadores reducidos (€2.179/mes)."
+        },
+        {
+          "id": "01-3-verdad",
+          "title": "01.3 Lo que creemos que será verdad en 5 años",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Toda pyme con operaciones comerciales consolidará ventas, soporte y cobros en plataformas conversacionales con IA embebida. Los canales legacy (email frío, formularios web, call centers) perderán relevancia frente a WhatsApp, voz sobre IP y agentes autónomos. La ventana para posicionarse como el estándar europeo es ahora."
+            }
+          ],
+          "flatText": "Toda pyme con operaciones comerciales consolidará ventas, soporte y cobros en plataformas conversacionales con IA embebida. Los canales legacy (email frío, formularios web, call centers) perderán relevancia frente a WhatsApp, voz sobre IP y agentes autónomos. La ventana para posicionarse como el estándar europeo es ahora."
+        }
+      ]
+    },
+    {
+      "id": "problema",
+      "title": "02. El problema",
+      "filename": "02-problema.mdx",
+      "subsections": [
+        {
+          "id": "02-1-dolor",
+          "title": "02.1 Dolor de mercado",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Procesos manuales de cobro y seguimiento** — Las pymes dedican horas semanales a perseguir pagos, enviar recordatorios y coordinar equipos de forma manual."
+            },
+            {
+              "type": "list_item",
+              "content": "**Herramientas legacy centradas en contabilidad, no en comunicación moderna** — El software existente gestiona facturas y asientos, pero no resuelve la interacción directa con el cliente por canales como WhatsApp o DMs."
+            },
+            {
+              "type": "list_item",
+              "content": "**Falta de trazabilidad y coordinación entre equipos** — Sin un sistema unificado, las tareas se pierden, los seguimientos se olvidan y no hay visibilidad sobre el estado real de cada gestión."
+            }
+          ],
+          "flatText": "**Procesos manuales de cobro y seguimiento** — Las pymes dedican horas semanales a perseguir pagos, enviar recordatorios y coordinar equipos de forma manual. **Herramientas legacy centradas en contabilidad, no en comunicación moderna** — El software existente gestiona facturas y asientos, pero no resuelve la interacción directa con el cliente por canales como WhatsApp o DMs. **Falta de trazabilidad y coordinación entre equipos** — Sin un sistema unificado, las tareas se pierden, los seguimientos se olvidan y no hay visibilidad sobre el estado real de cada gestión."
+        },
+        {
+          "id": "02-2-coste",
+          "title": "02.2 Coste operativo",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "El impacto de las operaciones fragmentadas"
+            },
+            {
+              "type": "paragraph",
+              "content": "Las empresas que dependen de procesos manuales para cobro y comunicación comercial pierden tiempo, márgenes y oportunidades. Los indicadores clave:"
+            },
+            {
+              "type": "list_item",
+              "content": "**Horas/semana en tareas repetitivas** — Envío manual de recordatorios, seguimiento de impagados, actualización de CRMs."
+            },
+            {
+              "type": "list_item",
+              "content": "**DSO elevado** — Sin automatización, los días de cobro se alargan y el cashflow se resiente."
+            },
+            {
+              "type": "list_item",
+              "content": "**Coste por tarea** — Cada interacción manual (email, llamada, WhatsApp) tiene un coste de oportunidad que escala con el volumen de clientes.\n\nMétricas *before/after* a reportar (por vertical) para evidenciar el impacto operativo:\n- **Horas/semana ahorradas** en atención/operaciones (tareas repetitivas: seguimiento, incidencias, cambios, recordatorios) — «[DATO_PENDIENTE: horas/semana antes → después, por vertical (Real Estate / Wine & Spirits / Restauración / Movilidad), periodo de medición (p. ej., 4 semanas), fuente: logs de escalado a humano + time-tracking/CS]».\n- **Reducción de DSO (días)** en flujos de cobro/impagos (si aplica) — «[DATO_PENDIENTE: DSO antes → después, en días, por cliente/vertical, periodo (p. ej., 90 días), fuente: ERP/contabilidad + Stripe/Shopify (pagos) + histórico de recordatorios]».\n- **Mejora en recuperación / conversión (%)** atribuible a automatización conversacional (p. ej., recuperación de carritos, confirmación de COD, cobros a tiempo, leads cualificados) — «[DATO_PENDIENTE: % antes → después, métrica exacta por caso (recovery rate / conversion rate / paid-on-time), periodo (p. ej., 8 semanas), fuente: CRM/Shopify + logs de campañas/etiquetas]»."
+            }
+          ],
+          "flatText": "Las empresas que dependen de procesos manuales para cobro y comunicación comercial pierden tiempo, márgenes y oportunidades. Los indicadores clave: **Horas/semana en tareas repetitivas** — Envío manual de recordatorios, seguimiento de impagados, actualización de CRMs. **DSO elevado** — Sin automatización, los días de cobro se alargan y el cashflow se resiente. **Coste por tarea** — Cada interacción manual (email, llamada, WhatsApp) tiene un coste de oportunidad que escala con el volumen de clientes."
+        },
+        {
+          "id": "02-3-fuga",
+          "title": "02.3 Fuga de ingresos",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Cobros tardíos y olvidos reducen el cashflow** — Sin recordatorios automáticos, las facturas se acumulan y los pagos se retrasan."
+            },
+            {
+              "type": "list_item",
+              "content": "**Mala comunicación aumenta churn y contracción** — Los clientes que no reciben atención proactiva abandonan o reducen su gasto."
+            },
+            {
+              "type": "list_item",
+              "content": "**Sin automatización, no hay escalabilidad sin aumentar headcount** — Cada nuevo cliente requiere más horas de gestión manual, creando un techo operativo al crecimiento."
+            }
+          ],
+          "flatText": "**Cobros tardíos y olvidos reducen el cashflow** — Sin recordatorios automáticos, las facturas se acumulan y los pagos se retrasan. **Mala comunicación aumenta churn y contracción** — Los clientes que no reciben atención proactiva abandonan o reducen su gasto. **Sin automatización, no hay escalabilidad sin aumentar headcount** — Cada nuevo cliente requiere más horas de gestión manual, creando un techo operativo al crecimiento."
+        }
+      ]
+    },
+    {
+      "id": "producto",
+      "title": "03. Producto",
+      "filename": "03-producto.mdx",
+      "subsections": [
+        {
+          "id": "03-1-que-es",
+          "title": "03.1 Qué es Lixsa",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Plataforma SaaS B2B para automatizar comunicación y operaciones comerciales/cobro mediante WhatsApp y flujos guiados, con módulos de campañas masivas, voz (2026 Q2) y agente de negocio (2026 Q4)."
+            },
+            {
+              "type": "paragraph",
+              "content": "Lixsa combina la inmediatez de los canales de mensajería modernos con automatización inteligente, permitiendo a pymes activar flujos completos (venta, soporte, cobro) en horas, no en meses."
+            }
+          ],
+          "flatText": "Plataforma SaaS B2B para automatizar comunicación y operaciones comerciales/cobro mediante WhatsApp y flujos guiados, con módulos de campañas masivas, voz (2026 Q2) y agente de negocio (2026 Q4). Lixsa combina la inmediatez de los canales de mensajería modernos con automatización inteligente, permitiendo a pymes activar flujos completos (venta, soporte, cobro) en horas, no en meses."
+        },
+        {
+          "id": "03-2-como-funciona",
+          "title": "03.2 Cómo funciona",
+          "elements": [
+            {
+              "type": "ordered_item",
+              "content": "**Conectas canales y fuentes de datos** — WhatsApp Business API, líneas telefónicas (voz), CRM o base de clientes."
+            },
+            {
+              "type": "ordered_item",
+              "content": "**Configuras flujos por vertical** — Plantillas + reglas + IA adaptadas a cada sector (real estate, restauración, e‑commerce…)."
+            },
+            {
+              "type": "ordered_item",
+              "content": "**Ejecutas campañas, seguimiento y llamadas** — Envío masivo, recordatorios automáticos, cobro proactivo."
+            },
+            {
+              "type": "ordered_item",
+              "content": "**Reporting de ROI y trazabilidad** — Dashboard con métricas de conversión, cobro recuperado, tiempos de respuesta."
+            }
+          ],
+          "flatText": "**Conectas canales y fuentes de datos** — WhatsApp Business API, líneas telefónicas (voz), CRM o base de clientes. **Configuras flujos por vertical** — Plantillas + reglas + IA adaptadas a cada sector (real estate, restauración, e‑commerce…). **Ejecutas campañas, seguimiento y llamadas** — Envío masivo, recordatorios automáticos, cobro proactivo. **Reporting de ROI y trazabilidad** — Dashboard con métricas de conversión, cobro recuperado, tiempos de respuesta."
+        },
+        {
+          "id": "03-3-canales",
+          "title": "03.3 Canales & integraciones",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**WhatsApp Business API** (nativo) — Canal principal para comunicación B2C/B2B."
+            },
+            {
+              "type": "list_item",
+              "content": "**Telefonía** (SIP/Twilio u otro) — Módulo de voz previsto para Q2 2026."
+            },
+            {
+              "type": "list_item",
+              "content": "**Stripe y Shopify Billing** — Gestión de suscripciones y cobros."
+            },
+            {
+              "type": "list_item",
+              "content": "**Integraciones futuras** — Webhooks, Zapier y CRMs (HubSpot, Salesforce) en roadmap 2027."
+            }
+          ],
+          "flatText": "**WhatsApp Business API** (nativo) — Canal principal para comunicación B2C/B2B. **Telefonía** (SIP/Twilio u otro) — Módulo de voz previsto para Q2 2026. **Stripe y Shopify Billing** — Gestión de suscripciones y cobros. **Integraciones futuras** — Webhooks, Zapier y CRMs (HubSpot, Salesforce) en roadmap 2027."
+        },
+        {
+          "id": "03-4-seguridad",
+          "title": "03.4 Seguridad & privacidad (resumen)",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**GDPR** — Cumplimiento estricto de protección de datos."
+            },
+            {
+              "type": "list_item",
+              "content": "**RBAC** — Control de permisos por rol y equipo."
+            },
+            {
+              "type": "list_item",
+              "content": "**Trazabilidad y auditoría** — Log completo de acciones y comunicaciones."
+            },
+            {
+              "type": "list_item",
+              "content": "**Backups y observabilidad** — Respaldo automático y monitorización."
+            },
+            {
+              "type": "list_item",
+              "content": "**Roadmap enterprise** — SSO/SCIM e ISO/SOC2 según demanda enterprise.\n\nChecklist (estado actual vs roadmap) — *validar antes de publicar claims*:\n- **RBAC (permisos por rol/equipo):** «[DATO_PENDIENTE: estado actual (sí/no + alcance), fuente: revisión producto/CTO]»\n- **Logs de auditoría (acciones, acceso, cambios de configuración):** «[DATO_PENDIENTE: estado actual + retención (días/meses), fuente: logs + revisión arquitectura]»\n- **Retención y borrado de datos (GDPR):** «[DATO_PENDIENTE: política de retención por tipo de dato (mensajes, PII, adjuntos) + proceso de borrado, fuente: DPA/Legal + CTO]»\n- **Cifrado:** en tránsito «[DATO_PENDIENTE: TLS/versión]» y en reposo «[DATO_PENDIENTE: cifrado en DB/backups + proveedor]»\n- **Backups y recuperación:** «[DATO_PENDIENTE: frecuencia, RPO/RTO objetivo, pruebas de restore, fuente: DevOps/CTO]»\n- **Acceso interno y controles:** «[DATO_PENDIENTE: MFA, principio de mínimo privilegio, acceso a producción, trazabilidad, fuente: CTO/DevOps]»\n- **SSO (SAML/OAuth) + SCIM:** «[DATO_PENDIENTE: roadmap (fecha objetivo) / en desarrollo / bajo demanda, fuente: roadmap producto]»\n- **ISO 27001 / SOC 2:** «[DATO_PENDIENTE: si es roadmap o proceso en curso (proveedor/auditor), fecha objetivo, fuente: Legal/CTO]»"
+            }
+          ],
+          "flatText": "**GDPR** — Cumplimiento estricto de protección de datos. **RBAC** — Control de permisos por rol y equipo. **Trazabilidad y auditoría** — Log completo de acciones y comunicaciones. **Backups y observabilidad** — Respaldo automático y monitorización. **Roadmap enterprise** — SSO/SCIM e ISO/SOC2 según demanda enterprise."
+        }
+      ]
+    },
+    {
+      "id": "traccion",
+      "title": "04. Tracción",
+      "filename": "04-traccion.mdx",
+      "subsections": [
+        {
+          "id": "04-1-clientes",
+          "title": "04.1 Clientes actuales (proof)",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Cohorte Enero 2026 — Datos reales (Stripe + Shopify Billing)"
+            },
+            {
+              "type": "paragraph",
+              "content": "17 clientes activos pagadores en enero 2026. A continuación los Top 5 por LTV neto histórico."
+            },
+            {
+              "type": "component",
+              "component": "ClientsTable",
+              "dataRef": "datasets.04_traccion.clientesActuales"
+            }
+          ],
+          "flatText": "17 clientes activos pagadores en enero 2026. A continuación los Top 5 por LTV neto histórico."
+        },
+        {
+          "id": "04-2-casos",
+          "title": "04.2 Casos de uso",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Casos de uso (formato estándar). Los ejemplos de cliente referenciados corresponden a clientes activos del portfolio (ver 04.1):\n\n**Caso 1 — Real Estate (alquiler de habitaciones) — Ejemplo: LIVE4LIFE**\n- **Tamaño cliente:** «[DATO_PENDIENTE: nº propiedades/unidades gestionadas, nº agentes, país]»\n- **Problema:** alto volumen de consultas + seguimiento manual (visitas, documentación, incidencias y recordatorios de pago) que consume horas del equipo y reduce conversión.\n- **Solución Lixsa:** atención 24/7 en WhatsApp con enrutamiento a humano cuando hay excepción; captura estructurada de datos (dirección, disponibilidad, presupuesto); automatización de confirmaciones y recordatorios; analítica de conversaciones.\n- **KPI before/after (medición recomendada):**\n  • Tiempo medio de primera respuesta: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: min)\n  • % conversaciones resueltas sin agente: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n  • Conversión lead→visita agendada: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n- **Time-to-value:** en horas (mismo día) tras activar canal + training base y publicar FAQs.\n\n**Caso 2 — Wine & Spirits (e-commerce + enoturismo) — Ejemplo: DOMAINE BOUSQUET**\n- **Tamaño cliente:** «[DATO_PENDIENTE: GMV mensual e-commerce, nº SKUs, nº agentes, país]»\n- **Problema:** soporte de pedidos/envíos + dudas de producto y campañas por WhatsApp; picos estacionales; fricción entre e-commerce y visitas/reservas.\n- **Solución Lixsa:** integración con e-commerce (catálogo, políticas, estado de pedido bajo identificación); smart tagging para segmentación; campañas push (lanzamientos, reposición, promos); derivación a reservas/visitas cuando aplica.\n- **KPI before/after (medición recomendada):**\n  • Recuperación de carritos / re-engagement: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n  • Ratio de escalado a humano en soporte: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n  • Ingresos atribuibles a campañas WhatsApp: «[DATO_PENDIENTE: € y periodo]» (fuente: Shopify/UTM/tagging)\n- **Time-to-value:** en horas (mismo día) con integración + training de políticas y productos clave.\n\n**Caso 3 — Restauración (reservas y atención al cliente) — Ejemplo: LA FOLIE**\n- **Tamaño cliente:** «[DATO_PENDIENTE: nº locales, nº reservas/semana, canales activos]»\n- **Problema:** alta carga de preguntas repetitivas (horarios, ubicación, alérgenos, cambios) y pérdida de reservas fuera de horario o en horas pico.\n- **Solución Lixsa:** asistente conversacional en WhatsApp/IG/Webchat; automatiza FAQs y toma de reservas (vía calendario/sistema de reservas); confirmaciones y recordatorios para reducir no-shows; escalado a humano para incidencias.\n- **KPI before/after (medición recomendada):**\n  • Reservas capturadas fuera de horario: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: nº/mes)\n  • Llamadas/mensajes evitados por FAQs automatizadas: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: nº/mes)\n  • No-show rate (si se mide): «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n- **Time-to-value:** en horas tras cargar FAQs + conectar agenda/reservas.\n\n**Caso 4 — Movilidad (alquiler de vehículos) — Ejemplo: MOMOVEN**\n- **Tamaño cliente:** «[DATO_PENDIENTE: nº reservas/mes, flota, nº agentes, país]»\n- **Problema:** preguntas repetitivas + coordinación de recogidas/entregas y documentación; incidencias que requieren triage rápido; cobros/depósitos con seguimiento manual.\n- **Solución Lixsa:** atención 24/7 en WhatsApp con flujos de pre-check (documentos, horarios) y enrutamiento; automatización de confirmaciones y recordatorios; recopilación estructurada de incidencias; integración con calendario/CRM si aplica.\n- **KPI before/after (medición recomendada):**\n  • Tiempo de gestión por reserva/incidencia: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: min)\n  • % incidencias resueltas sin intervención humana: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n  • Conversión conversación→reserva confirmada: «[DATO_PENDIENTE: antes]» → «[DATO_PENDIENTE: después]» (unidad: %)\n- **Time-to-value:** en horas tras activar canal + flujos de onboarding y documentación."
+            },
+            {
+              "type": "list_item",
+              "content": "**Real Estate** — Gestión de comunicación con inquilinos y seguimiento de pagos."
+            },
+            {
+              "type": "list_item",
+              "content": "**Wine & Spirits** — E‑commerce + enoturismo: campañas y soporte por WhatsApp."
+            },
+            {
+              "type": "list_item",
+              "content": "**Restauración** — Reservas, pedidos y atención al cliente automatizada."
+            },
+            {
+              "type": "list_item",
+              "content": "**Movilidad** — Alquiler de vehículos: onboarding y cobro recurrente."
+            }
+          ],
+          "flatText": "Casos de uso con estructura estándar (vertical, problema, solución, KPI before/after y time-to-value): Real Estate (LIVE4LIFE), Wine & Spirits (DOMAINE BOUSQUET), Restauración (LA FOLIE), Movilidad (MOMOVEN). Todos los KPIs cuantitativos quedan como «[DATO_PENDIENTE]» hasta validar mediciones antes/después."
+        },
+        {
+          "id": "04-3-testimonios",
+          "title": "04.3 Testimonios",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Testimonios de clientes (pendiente de autorización)"
+            },
+            {
+              "type": "paragraph",
+              "content": "Testimonios (2–3) a incluir en el paper. Requisito: autorización explícita del cliente para usar nombre/URL/cita.\n\n- **Testimonio 1 — «[DATO_PENDIENTE: Empresa + URL]»**\n  «[DATO_PENDIENTE: cita textual aprobada]»\n  Resultado asociado: «[DATO_PENDIENTE: 1 métrica cuantificada before→after (p. ej., % autoservicio, horas/semana ahorradas, conversión WhatsApp), periodo y fuente]».\n\n- **Testimonio 2 — «[DATO_PENDIENTE: Empresa + URL]»**\n  «[DATO_PENDIENTE: cita textual aprobada]»\n  Resultado asociado: «[DATO_PENDIENTE: 1 métrica cuantificada before→after, periodo y fuente]».\n\n- **Testimonio 3 — «[DATO_PENDIENTE: Empresa + URL]»**\n  «[DATO_PENDIENTE: cita textual aprobada]»\n  Resultado asociado: «[DATO_PENDIENTE: 1 métrica cuantificada before→after, periodo y fuente]».\n\nCómo obtenerlos: entrevista con el cliente + validación por escrito; complementar con extracción de métricas desde logs de conversaciones/escalados y/o Shopify/CRM del cliente."
+            }
+          ],
+          "flatText": "Incluir 3 testimonios reales (con permiso) y métricas asociadas de clientes activos."
+        },
+        {
+          "id": "04-4-dashboard",
+          "title": "04.4 Dashboard de métricas",
+          "elements": [
+            {
+              "type": "chart",
+              "chart": "HistoricalMrrChart",
+              "dataRef": "datasets.04_traccion.historicalRevenue"
+            },
+            {
+              "type": "component",
+              "component": "KpiCards",
+              "dataRef": "inline"
+            }
+          ],
+          "flatText": ""
+        }
+      ]
+    },
+    {
+      "id": "mercado",
+      "title": "05. Mercado & competencia",
+      "filename": "05-mercado.mdx",
+      "subsections": [
+        {
+          "id": "05-1-tam",
+          "title": "05.1 Tamaño de mercado (España 2026) — TAM / SAM / SOM",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Fuentes: INE (DIRCE + TIC 2024) · Pricing público Lixsa · Foco PYME · SaaS conversacional (WhatsApp/DMs)"
+            },
+            {
+              "type": "paragraph",
+              "content": "Dimensionamiento top-down con datos públicos. Proyección 2026 aplicando +1,7% anual sobre DIRCE 2025."
+            },
+            {
+              "type": "heading_bold",
+              "content": "Inputs clave (fuentes INE):"
+            },
+            {
+              "type": "list_item",
+              "content": "**Empresas activas (DIRCE 1/1/2025):** 3,15M (\\<10 empleados) + 161K (10+ empleados)."
+            },
+            {
+              "type": "list_item",
+              "content": "**% con Internet:** 79,9% (\\<10 empl.) / 99% (10+ empl.)."
+            },
+            {
+              "type": "list_item",
+              "content": "**% usan medios sociales:** 37,8% (\\<10 empl.) / 69,7% (10+ empl.)."
+            },
+            {
+              "type": "list_item",
+              "content": "**% venden por e‑commerce:** 8,6% (\\<10 empl.) / 26,6% (10+ empl.)."
+            },
+            {
+              "type": "list_item",
+              "content": "**% emplean IA:** 13,4% (\\<10 empl.) / 21,1% (10+ empl.)."
+            },
+            {
+              "type": "heading_bold",
+              "content": "Definiciones operativas:"
+            },
+            {
+              "type": "list_item",
+              "content": "**TAM** — Empresas con Internet (proxy mínimo para SaaS conversacional)."
+            },
+            {
+              "type": "list_item",
+              "content": "**SAM (social)** — Empresas con Internet que usan medios sociales (proxy de operación en DMs)."
+            },
+            {
+              "type": "list_item",
+              "content": "**SAM (e‑commerce)** — Empresas con Internet que venden online (alta propensión a automatización)."
+            },
+            {
+              "type": "list_item",
+              "content": "**SAM (IA)** — Empresas con Internet que emplean IA (proxy de readiness para agentes)."
+            },
+            {
+              "type": "heading_bold",
+              "content": "SOM modelado (captura anual sobre SAM social):"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Escenario",
+                "% captura",
+                "Notas"
+              ],
+              "rows": [
+                [
+                  "**Bajo**",
+                  "0,02%",
+                  "Cuota conservadora primer año"
+                ],
+                [
+                  "**Base**",
+                  "0,07%",
+                  "Escenario plan"
+                ],
+                [
+                  "**Alto**",
+                  "0,20%",
+                  "Crecimiento excepcional"
+                ]
+              ]
+            }
+          ],
+          "flatText": "Dimensionamiento top-down con datos públicos. Proyección 2026 aplicando +1,7% anual sobre DIRCE 2025. **Empresas activas (DIRCE 1/1/2025):** 3,15M (\\<10 empleados) + 161K (10+ empleados). **% con Internet:** 79,9% (\\<10 empl.) / 99% (10+ empl.). **% usan medios sociales:** 37,8% (\\<10 empl.) / 69,7% (10+ empl.). **% venden por e‑commerce:** 8,6% (\\<10 empl.) / 26,6% (10+ empl.). **% emplean IA:** 13,4% (\\<10 empl.) / 21,1% (10+ empl.). **TAM** — Empresas con Internet (proxy mínimo para SaaS conversacional). **SAM (social)** — Empresas con Internet que usan medios sociales (proxy de operación en DMs). **SAM (e‑commerce)** — Empresas con Internet que venden online (alta propensión a automatización). **SAM (IA)** — Empresas con Internet que emplean IA (proxy de readiness para agentes)."
+        },
+        {
+          "id": "05-2-landscape",
+          "title": "05.2 Panorama competitivo (España 2026 · PYME)",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "El campo competitivo se divide en tres familias:"
+            },
+            {
+              "type": "ordered_item",
+              "content": "**PLG para micro‑PYME** (builders/no‑code y automatización DM): ManyChat, Landbot."
+            },
+            {
+              "type": "ordered_item",
+              "content": "**Suites omnicanal/inbox para equipos** (más caras, orientadas a agentes): respond.io, Trengo, Zendesk."
+            },
+            {
+              "type": "ordered_item",
+              "content": "**Especialistas e‑commerce y/o consultoría** (enfoque conversión o proyectos): Oct8ne, Gorgias; y players locales enterprise (Hubtype, Aunoa, Inbenta)."
+            },
+            {
+              "type": "blockquote",
+              "content": "**Contexto clave:** Desde 01‑jul‑2025 WhatsApp Business Platform migra a pricing por mensaje (template) y utility templates dentro de Customer Service Window pasan a ser gratis — esto favorece agentes que resuelven dentro de la ventana y controlan el uso de plantillas."
+            },
+            {
+              "type": "component",
+              "component": "ClientsTable",
+              "dataRef": "datasets.04_traccion.clientesActuales"
+            }
+          ],
+          "flatText": "El campo competitivo se divide en tres familias: **PLG para micro‑PYME** (builders/no‑code y automatización DM): ManyChat, Landbot. **Suites omnicanal/inbox para equipos** (más caras, orientadas a agentes): respond.io, Trengo, Zendesk. **Especialistas e‑commerce y/o consultoría** (enfoque conversión o proyectos): Oct8ne, Gorgias; y players locales enterprise (Hubtype, Aunoa, Inbenta). **Contexto clave:** Desde 01‑jul‑2025 WhatsApp Business Platform migra a pricing por mensaje (template) y utility templates dentro de Customer Service Window pasan a ser gratis — esto favorece agentes que resuelven dentro de la ventana y controlan el uso de plantillas."
+        },
+        {
+          "id": "05-3-diferenciacion",
+          "title": "05.3 Diferenciación (cómo ganamos en PYME)",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**UI/UX a nivel consumidor** — Setup sin fricción, experiencia familiar."
+            },
+            {
+              "type": "list_item",
+              "content": "**Time‑to‑value en horas** (no meses) — Plantillas, onboarding guiado, integraciones e‑commerce."
+            },
+            {
+              "type": "list_item",
+              "content": "**Enfoque \"Primero la Comunicación\"** — WhatsApp/DMs como canal core (no un añadido a helpdesk)."
+            },
+            {
+              "type": "list_item",
+              "content": "**Control de coste WhatsApp** — Optimizar resolución dentro de Customer Service Window; minimizar plantillas billables."
+            },
+            {
+              "type": "list_item",
+              "content": "**Bundle orientado a conversión** — Campañas, carritos, pedidos + agente IA (soporte + ventas)."
+            }
+          ],
+          "flatText": "**UI/UX a nivel consumidor** — Setup sin fricción, experiencia familiar. **Time‑to‑value en horas** (no meses) — Plantillas, onboarding guiado, integraciones e‑commerce. **Enfoque \"Primero la Comunicación\"** — WhatsApp/DMs como canal core (no un añadido a helpdesk). **Control de coste WhatsApp** — Optimizar resolución dentro de Customer Service Window; minimizar plantillas billables. **Bundle orientado a conversión** — Campañas, carritos, pedidos + agente IA (soporte + ventas)."
+        },
+        {
+          "id": "05-4-riesgos-competitivos",
+          "title": "05.4 Riesgos competitivos y mitigaciones",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**R1) PLG global (ManyChat)** compite por precio y simplicidad → *Mitigación:* verticales con ROI claro + bundle e‑commerce + soporte."
+            },
+            {
+              "type": "list_item",
+              "content": "**R2) Suites helpdesk (Zoho/Freshdesk/Zendesk)** entran por soporte → *Mitigación:* posicionamiento \"ventas por WhatsApp\" + TTV rápido."
+            },
+            {
+              "type": "list_item",
+              "content": "**R3) Coste variable WhatsApp** (per‑message pricing) → *Mitigación:* pricing usage‑based + optimización CSW + analítica de costes por plantilla."
+            },
+            {
+              "type": "list_item",
+              "content": "**R4) Players locales enterprise** neutralizan cuentas grandes → *Mitigación:* segmentación (SMB/mid) y roadmap enterprise solo cuando NRR/ACV lo justifique."
+            }
+          ],
+          "flatText": "**R1) PLG global (ManyChat)** compite por precio y simplicidad → *Mitigación:* verticales con ROI claro + bundle e‑commerce + soporte. **R2) Suites helpdesk (Zoho/Freshdesk/Zendesk)** entran por soporte → *Mitigación:* posicionamiento \"ventas por WhatsApp\" + TTV rápido. **R3) Coste variable WhatsApp** (per‑message pricing) → *Mitigación:* pricing usage‑based + optimización CSW + analítica de costes por plantilla. **R4) Players locales enterprise** neutralizan cuentas grandes → *Mitigación:* segmentación (SMB/mid) y roadmap enterprise solo cuando NRR/ACV lo justifique."
+        },
+        {
+          "id": "05-5-distribucion",
+          "title": "05.5 Distribución geográfica objetivo",
+          "elements": [
+            {
+              "type": "component",
+              "component": "KpiCards",
+              "dataRef": "inline"
+            }
+          ],
+          "flatText": ""
+        }
+      ]
+    },
+    {
+      "id": "gtm",
+      "title": "06. Go-to-market",
+      "filename": "06-gtm.mdx",
+      "subsections": [
+        {
+          "id": "06-1-resumen",
+          "title": "06.1 Estrategia general",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Distribución objetivo de clientes"
+            },
+            {
+              "type": "paragraph",
+              "content": "50% España (base operativa) · 20% Europa (resto) · 30% fuera de Europa (LatAm + mercados hispanos/inglés)."
+            },
+            {
+              "type": "paragraph",
+              "content": "El plan comercial se estructura en fases trimestrales, escalando desde outbound local hasta partners internacionales y PLG."
+            }
+          ],
+          "flatText": "50% España (base operativa) · 20% Europa (resto) · 30% fuera de Europa (LatAm + mercados hispanos/inglés). El plan comercial se estructura en fases trimestrales, escalando desde outbound local hasta partners internacionales y PLG."
+        },
+        {
+          "id": "06-2-plan-2026",
+          "title": "06.2 Plan 2026 — Validar y escalar",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "Trimestre",
+                "Mercados",
+                "Canales",
+                "Oferta / Pricing",
+                "KPIs clave"
+              ],
+              "rows": [
+                [
+                  "**Q1**",
+                  "España (base)",
+                  "Outbound + referrals",
+                  "Pricing v1 (paquetes)",
+                  "MRR, CAC"
+                ],
+                [
+                  "**Q2**",
+                  "España + LatAm",
+                  "Outbound + Paid (Meta) + Partner 1",
+                  "Add-on: llamadas",
+                  "Payback, NRR"
+                ],
+                [
+                  "**Q3**",
+                  "LatAm (top 3)",
+                  "Outbound sistemático + Partners (agencias) + Webinars",
+                  "Bundles por vertical",
+                  "Logos, win-rate"
+                ],
+                [
+                  "**Q4**",
+                  "EU Wave 1",
+                  "Partners + ABM light + Inbound + Referrals",
+                  "Upsell Agente",
+                  "Expansion MRR"
+                ]
+              ]
+            }
+          ],
+          "flatText": ""
+        },
+        {
+          "id": "06-3-plan-2027",
+          "title": "06.3 Plan 2027 — Expansión EU y mid-market",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "Trimestre",
+                "Mercados",
+                "Canales",
+                "Oferta / Pricing",
+                "KPIs clave"
+              ],
+              "rows": [
+                [
+                  "**Q1**",
+                  "EU EN",
+                  "Partners EU + Outbound por vertical + Inbound",
+                  "Trial guiado · Pricing localizado",
+                  "Activation"
+                ],
+                [
+                  "**Q2**",
+                  "EU Wave 2",
+                  "PLG light + Partners + Outbound",
+                  "Pricing v2 · PQL scoring",
+                  "Channel %"
+                ],
+                [
+                  "**Q3**",
+                  "EU",
+                  "ABM + outbound",
+                  "Usage-based add-ons",
+                  "NRR"
+                ],
+                [
+                  "**Q4**",
+                  "EU",
+                  "Mixed",
+                  "Enterprise add-ons",
+                  "GM, EBITDA"
+                ]
+              ]
+            }
+          ],
+          "flatText": ""
+        },
+        {
+          "id": "06-4-plan-2028-2030",
+          "title": "06.4 Plan 2028–2030 — Optimización y rentabilidad",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "A partir de 2028, el foco se desplaza de crecimiento puro a optimización de unit economics:"
+            },
+            {
+              "type": "list_item",
+              "content": "**Mercados:** Priorizar EU por CAC saludable."
+            },
+            {
+              "type": "list_item",
+              "content": "**Verticales:** Top 3 verticales validadas."
+            },
+            {
+              "type": "list_item",
+              "content": "**Canales:** Partners + outbound + PLG consolidado."
+            },
+            {
+              "type": "list_item",
+              "content": "**Oferta:** Optimizar packaging, reducir CAC, subir NRR."
+            },
+            {
+              "type": "list_item",
+              "content": "**KPI principal:** Payback → EBITDA positivo."
+            }
+          ],
+          "flatText": "A partir de 2028, el foco se desplaza de crecimiento puro a optimización de unit economics: **Mercados:** Priorizar EU por CAC saludable. **Verticales:** Top 3 verticales validadas. **Canales:** Partners + outbound + PLG consolidado. **Oferta:** Optimizar packaging, reducir CAC, subir NRR. **KPI principal:** Payback → EBITDA positivo."
+        }
+      ]
+    },
+    {
+      "id": "roadmap",
+      "title": "07. Roadmap",
+      "filename": "07-roadmap.mdx",
+      "subsections": [
+        {
+          "id": "07-1-2026",
+          "title": "07.1 Roadmap 2026 — Producto + Plataforma",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "Trimestre",
+                "Producto (hitos)",
+                "Plataforma / Tech",
+                "KPIs objetivo"
+              ],
+              "rows": [
+                [
+                  "**Q1**",
+                  "Cerrar gaps MVP→Producto: onboarding, permisos, billing, logs · Mejoras deliverability WhatsApp + campañas masivas · Definir ICP/verticales y pricing v1",
+                  "Observabilidad (logs/metrics/traces), alertas · Data stack mínimo · Hardening seguridad: roles, backups, rate limits",
+                  "MRR fin Q1 ≈ €4k · Churn logo ≤ 6%"
+                ],
+                [
+                  "**Q2**",
+                  "Integración llamadas: WhatsApp Calls + líneas telefónicas (feature-flag) · Tracking de llamadas y transcripción · Catálogo de flujos por vertical (v1)",
+                  "Integración proveedor telefonía (SIP/Twilio) · Consentimiento y compliance (GDPR, opt-in) · QA automatizado básico",
+                  "MRR fin Q2 ≈ €7k · Payback ≤ 6–9m"
+                ],
+                [
+                  "**Q3**",
+                  "IA para scoring/segmentación de leads (v1) · Mejoras campañas masivas (personalización, A/B) · Framework multi-idioma (ES+EN base)",
+                  "Multi-tenant hardening + performance · RBAC avanzado / auditoría · Integraciones básicas (Zapier/Webhooks)",
+                  "MRR fin Q3 ≈ €12–15k · NRR ≥ 105–110%"
+                ],
+                [
+                  "**Q4**",
+                  "Lanzar Agente de Negocio (apoyo a managers: marketing/backoffice) · Automatización de tareas (resúmenes, recomendaciones) · Idiomas EU Wave 1: EN/PT/FR/IT",
+                  "Feature store / prompts governance · Seguridad: SSO (SAML/OAuth) si enterprise · Pipeline de experimentos (feature flags)",
+                  "MRR fin Q4 ≈ €22–28k · GM ≥ 65% · Churn logo ≤ 4–5%"
+                ]
+              ]
+            }
+          ],
+          "flatText": ""
+        },
+        {
+          "id": "07-2-2027",
+          "title": "07.2 Roadmap 2027 — Expansión y enterprise readiness",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "Trimestre",
+                "Producto (hitos)",
+                "Plataforma / Tech",
+                "KPIs objetivo"
+              ],
+              "rows": [
+                [
+                  "**Q1**",
+                  "Paquetes por vertical (Real Estate/Clinics/Auto) v1 · Portal self-serve (checkout + trial) · Mejoras telefonía: grabación/analytics",
+                  "Data warehouse + métricas (North Star) · CI/CD + IaC (Terraform) · SLA/monitoring 24/7",
+                  "ARR run-rate ≈ €0,7–0,9M · Payback ≤ 9m"
+                ],
+                [
+                  "**Q2**",
+                  "Agente de negocio v2 (workflows, aprobaciones) · Integraciones CRM (HubSpot/Salesforce) v1 · Multi-canal: email/SMS",
+                  "RBAC + auditoría completa · SSO + SCIM (si enterprise) · Pruebas de carga y optimización costes",
+                  "NRR ≥ 110–115% · GM ≥ 70–75%"
+                ],
+                [
+                  "**Q3**",
+                  "Marketplace / App directory (integraciones) · Routing inteligente de leads y llamadas · Recomendaciones IA (next-best-action)",
+                  "Preparación ISO27001/SOC2 (gap analysis) · Data retention + DLP · Multi-region (plan)",
+                  "MRR fin Q3 ≈ €110–140k · Canal partners ≥ 20% logos"
+                ],
+                [
+                  "**Q4**",
+                  "Enterprise readiness: SSO, auditoría, data residency · Gestión avanzada de plantillas por vertical · Panel de ROI automático",
+                  "Multi-region hosting (EU) · Cost optimization (FinOps) · Backups/DR testados",
+                  "MRR fin Q4 ≈ €140–180k · EBITDA ≈ break-even"
+                ]
+              ]
+            }
+          ],
+          "flatText": ""
+        },
+        {
+          "id": "07-3-2028-2030",
+          "title": "07.3 Roadmap 2028–2030 — Escala y rentabilidad",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "A partir de 2028, el roadmap se orienta a:"
+            },
+            {
+              "type": "list_item",
+              "content": "**Producto:** Profundizar verticales + paquetes enterprise (v2), IA/Agents multi-agente, mejoras UX y reporting."
+            },
+            {
+              "type": "list_item",
+              "content": "**Plataforma:** Escalabilidad multi-region + data residency, seguridad/compliance (ISO/SOC2), observabilidad + cost governance."
+            },
+            {
+              "type": "list_item",
+              "content": "**Go-to-market:** Expansión internacional priorizando mercados con CAC saludable, optimización de packaging y unit economics."
+            },
+            {
+              "type": "list_item",
+              "content": "**Meta:** Crecimiento sostenible con EBITDA positivo y camino a rentabilidad operativa."
+            }
+          ],
+          "flatText": "A partir de 2028, el roadmap se orienta a: **Producto:** Profundizar verticales + paquetes enterprise (v2), IA/Agents multi-agente, mejoras UX y reporting. **Plataforma:** Escalabilidad multi-region + data residency, seguridad/compliance (ISO/SOC2), observabilidad + cost governance. **Go-to-market:** Expansión internacional priorizando mercados con CAC saludable, optimización de packaging y unit economics. **Meta:** Crecimiento sostenible con EBITDA positivo y camino a rentabilidad operativa."
+        }
+      ]
+    },
+    {
+      "id": "financiero",
+      "title": "08. Plan financiero",
+      "filename": "08-financiero.mdx",
+      "subsections": [
+        {
+          "id": "08-1-2026",
+          "title": "08.1 P&L 2026 — Año de inversión",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Datos del modelo financiero (Excel v23) — Escenario base"
+            },
+            {
+              "type": "paragraph",
+              "content": "Inputs editables en columna derecha de cada hoja anual. Todas las cifras en €. Costes fundadores a €2.179/mes (reducción voluntaria)."
+            },
+            {
+              "type": "heading_bold",
+              "content": "Supuestos clave 2026:"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Parámetro",
+                "Valor",
+                "Notas"
+              ],
+              "rows": [
+                [
+                  "Clientes inicio (Dic 2025)",
+                  "18",
+                  "Base instalada real"
+                ],
+                [
+                  "ARPU inicio",
+                  "€158",
+                  "MRR/clientes Dic-25"
+                ],
+                [
+                  "Crecimiento mensual clientes",
+                  "Variable",
+                  "Ramp lineal enero→diciembre"
+                ],
+                [
+                  "ARPU YoY growth",
+                  "+5%",
+                  "Efecto voz + agente"
+                ],
+                [
+                  "Campaign share of ARPU",
+                  "~15%",
+                  "Ingresos campañas / total"
+                ],
+                [
+                  "COV ratio (excl. processing)",
+                  "~12%",
+                  "IA + WhatsApp + cloud"
+                ],
+                [
+                  "Marketing ratio",
+                  "~10% del revenue",
+                  "Meta + outbound + eventos"
+                ],
+                [
+                  "Salary inflation YoY",
+                  "3,0%",
+                  "No-founders sobre base 2025"
+                ],
+                [
+                  "Fixed cost inflation YoY",
+                  "3,0%",
+                  "Software, gestoría, oficina"
+                ],
+                [
+                  "Monthly churn rate",
+                  "~3%",
+                  "Logo churn objetivo"
+                ],
+                [
+                  "Inversión planificada",
+                  "€850.000",
+                  "€550K equity (Abr) + €300K ENISA (Sep)"
+                ]
+              ]
+            },
+            {
+              "type": "heading_bold",
+              "content": "Estructura de costes 2026:"
+            },
+            {
+              "type": "list_item",
+              "content": "**HHRR fundadores:** CTO + CPO + CRO a €2.179/mes cada uno."
+            },
+            {
+              "type": "list_item",
+              "content": "**HHRR equipo:** CS Manager, Marketing, 3× Senior Dev, Data Eng, IA Eng (todos desde Ene)."
+            },
+            {
+              "type": "list_item",
+              "content": "**Nuevas contrataciones 2026:** SDR/BDR (May), Account Executive (Jul), Soporte/Onboarding (Sep), RevOps (Oct)."
+            },
+            {
+              "type": "list_item",
+              "content": "**Costes fijos:** Software tools ~€1.350/mes, gestoría ~€550/mes, oficina €3.500/mes (desde May), viajes €800/mes."
+            }
+          ],
+          "flatText": "Inputs editables en columna derecha de cada hoja anual. Todas las cifras en €. Costes fundadores a €2.179/mes (reducción voluntaria). **HHRR fundadores:** CTO + CPO + CRO a €2.179/mes cada uno. **HHRR equipo:** CS Manager, Marketing, 3× Senior Dev, Data Eng, IA Eng (todos desde Ene). **Nuevas contrataciones 2026:** SDR/BDR (May), Account Executive (Jul), Soporte/Onboarding (Sep), RevOps (Oct). **Costes fijos:** Software tools ~€1.350/mes, gestoría ~€550/mes, oficina €3.500/mes (desde May), viajes €800/mes."
+        },
+        {
+          "id": "08-2-2027",
+          "title": "08.2 P&L 2027",
+          "elements": [
+            {
+              "type": "heading_bold",
+              "content": "Supuestos clave 2027:"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Parámetro",
+                "Valor"
+              ],
+              "rows": [
+                [
+                  "Salary inflation (non-founders)",
+                  "10,0%"
+                ],
+                [
+                  "Fixed cost inflation",
+                  "3,0%"
+                ],
+                [
+                  "Sales & Ops team",
+                  "Consolidación + escala del equipo comercial de 2026"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": "A partir de 2027 se consolida el equipo de Sales & Ops contratado en 2026 como una línea agregada, y se aplica inflación salarial del 10% para retener talento."
+            }
+          ],
+          "flatText": "A partir de 2027 se consolida el equipo de Sales & Ops contratado en 2026 como una línea agregada, y se aplica inflación salarial del 10% para retener talento."
+        },
+        {
+          "id": "08-3-2028",
+          "title": "08.3 P&L 2028",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Misma estructura que 2027, con 10% de inflación salarial y 3% en costes fijos. El modelo proyecta crecimiento de clientes y ARPU según los inputs editables de la hoja 2028."
+            }
+          ],
+          "flatText": "Misma estructura que 2027, con 10% de inflación salarial y 3% en costes fijos. El modelo proyecta crecimiento de clientes y ARPU según los inputs editables de la hoja 2028."
+        },
+        {
+          "id": "08-4-2029",
+          "title": "08.4 P&L 2029",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Escalado del modelo. Optimización de GM y camino hacia EBITDA positivo."
+            }
+          ],
+          "flatText": "Escalado del modelo. Optimización de GM y camino hacia EBITDA positivo."
+        },
+        {
+          "id": "08-5-2030",
+          "title": "08.5 P&L 2030",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Año de maduración del modelo. Objetivo: rentabilidad operativa sostenida."
+            }
+          ],
+          "flatText": "Año de maduración del modelo. Objetivo: rentabilidad operativa sostenida."
+        },
+        {
+          "id": "08-6-supuestos",
+          "title": "08.6 Supuestos & dependencias",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Supuestos base del plan (hoja 'Supuestos_y_Riesgos')"
+            },
+            {
+              "type": "paragraph",
+              "content": "Cada supuesto tiene una señal de alerta, una mitigación y un owner/fecha de revisión."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Supuesto",
+                "Base",
+                "Señal de alerta",
+                "Mitigación"
+              ],
+              "rows": [
+                [
+                  "**Telefonía / WhatsApp Calls**",
+                  "Proveedor listo + compliance OK (Q2 2026)",
+                  "Retrasos integración / costes altos",
+                  "Feature flag + pilotos; negociar; fallback PSTN"
+                ],
+                [
+                  "**Internacionalización**",
+                  "ES→EU idiomas sin romper UX",
+                  "Conversión cae en nuevos idiomas",
+                  "Localización incremental + analytics"
+                ],
+                [
+                  "**Agente de negocio**",
+                  "Valor claro para managers (Q4 2026)",
+                  "Baja adopción",
+                  "UX con tareas concretas; medir TTV; iterar"
+                ],
+                [
+                  "**Churn**",
+                  "Churn logo ≈ 2-3% mensual",
+                  "Soporte saturado / bugs",
+                  "Escalar CS, QA, observabilidad"
+                ],
+                [
+                  "**CAC**",
+                  "Payback ≈ 12m",
+                  "Paid se dispara / baja win-rate",
+                  "Priorizar outbound+partners; mejorar targeting"
+                ],
+                [
+                  "**Seguridad / compliance**",
+                  "Requisitos enterprise crecen",
+                  "Bloqueos en deals",
+                  "SSO/auditoría; roadmap ISO/SOC2"
+                ]
+              ]
+            }
+          ],
+          "flatText": "Cada supuesto tiene una señal de alerta, una mitigación y un owner/fecha de revisión."
+        },
+        {
+          "id": "08-7-escenarios",
+          "title": "08.7 Escenarios & sensitivities",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Se recomienda modelar **Base / Upside / Downside** tocando 6 palancas:"
+            },
+            {
+              "type": "component",
+              "component": "KpiCards",
+              "dataRef": "inline"
+            },
+            {
+              "type": "heading_bold",
+              "content": "Sensibilidades y escenarios sugeridos (Base / Upside / Downside) tocando 6 palancas: growth, churn, ARPU/attach, CAC, gross margin y hiring.\n\n**Base (Plan):** palancas según supuestos del modelo y targets internos. Se asume ejecución del plan de contratación y lanzamiento de voz/agente según roadmap.\n\n**Upside (mejor ejecución):**\n- Growth por encima del plan por canal partners + outbound más eficiente.\n- Churn mejor que el objetivo (menos pérdida de logos y de MRR).\n- ARPU/attach sube por adopción de campañas + voz/agente (upsell a base instalada).\n- CAC baja por mayor conversión demo→win y mayor share de partners.\n- GM mejora por optimización de COGS (cloud/IA/WhatsApp) y pricing.\n- Hiring se mantiene en plan o ligeramente más lento sin frenar revenue.\n\n**Downside (fricción de go-to-market):**\n- Growth por debajo del plan.\n- Churn empeora (sensibilidad típica: **+1pp churn mensual**).\n- ARPU cae (sensibilidad típica: **−10% ARPU**).\n- CAC sube (sensibilidad típica: **+20% CAC**).\n- GM se comprime (sensibilidad típica: **+10% COGS voz/WhatsApp**).\n- Eventos de liquidez: «[DATO_PENDIENTE: riesgo de retraso de ronda y meses, si aplica]».\n\nOutputs a reportar por escenario (sin inventar; extraer del modelo financiero):\n- **ARR a 12 meses**: «[DATO_PENDIENTE: ARR 12m por escenario, €]»\n- **ARR a 24 meses**: «[DATO_PENDIENTE: ARR 24m por escenario, €]»\n- **Runway (meses) y burn mensual medio**: «[DATO_PENDIENTE: runway + burn por escenario, meses/€]»\n- **Caja mínima (cash mínimo) y mes crítico**: «[DATO_PENDIENTE: cash mínimo + mes, €]»\n\nInstrumentación recomendada: hoja de escenarios en el Excel fuente (palancas + outputs) + validación Finanzas/CRO."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Escenario",
+                "Impacto estimado"
+              ],
+              "rows": [
+                [
+                  "+1pp churn mensual",
+                  "Reduce ARR ~12% anual; acorta runway"
+                ],
+                [
+                  "+20% CAC",
+                  "Payback >12m; reduce eficiencia S&M"
+                ],
+                [
+                  "−10% ARPU",
+                  "Margen bruto cae; retrasa break-even"
+                ],
+                [
+                  "+10% COGS voz/WhatsApp",
+                  "GM comprimido ~2-3pp"
+                ],
+                [
+                  "Retraso ronda 3 meses",
+                  "Runway se acorta; retrasar hiring"
+                ]
+              ]
+            }
+          ],
+          "flatText": "Se recomienda modelar **Base / Upside / Downside** tocando 6 palancas:"
+        },
+        {
+          "id": "08-8-unit",
+          "title": "08.8 Unit economics (CAC / LTV / Payback)",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Métricas unitarias — Estructura del modelo"
+            },
+            {
+              "type": "paragraph",
+              "content": "Los cálculos detallados están en la hoja KPIs_Ratios, enlazados a los P&L anuales."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Métrica",
+                "Definición",
+                "Objetivo 2026"
+              ],
+              "rows": [
+                [
+                  "**CAC Marketing**",
+                  "Gasto marketing / nuevos clientes",
+                  "Tracking mensual"
+                ],
+                [
+                  "**CAC S&M**",
+                  "(Marketing + equipo ventas) / nuevos clientes",
+                  "≤ €1.500"
+                ],
+                [
+                  "**ARPU medio**",
+                  "MRR total / clientes activos",
+                  "€150–200"
+                ],
+                [
+                  "**Churn rate**",
+                  "% clientes perdidos / mes",
+                  "≤ 3%"
+                ],
+                [
+                  "**LTV**",
+                  "ARPU × (1/churn) × GM",
+                  "> 3× CAC"
+                ],
+                [
+                  "**Payback**",
+                  "CAC / (ARPU × GM)",
+                  "≤ 12 meses"
+                ]
+              ]
+            },
+            {
+              "type": "heading_bold",
+              "content": "Evolución histórica de ingresos (Ago 2024 → Ene 2026):"
+            },
+            {
+              "type": "chart",
+              "chart": "HistoricalMrrChart",
+              "dataRef": "datasets.04_traccion.historicalRevenue"
+            }
+          ],
+          "flatText": "Los cálculos detallados están en la hoja KPIs_Ratios, enlazados a los P&L anuales."
+        }
+      ]
+    },
+    {
+      "id": "riesgos",
+      "title": "09. Riesgos & mitigaciones",
+      "filename": "09-riesgos.mdx",
+      "subsections": [
+        {
+          "id": "riesgos",
+          "title": "09. Riesgos & mitigaciones",
+          "elements": [
+            {
+              "type": "component",
+              "component": "EvidenceBlock",
+              "title": "Matriz de riesgos (hoja 'Supuestos_y_Riesgos' + '09. Riesgos')"
+            },
+            {
+              "type": "paragraph",
+              "content": "Riesgos operacionales, financieros y de mercado con señales de alerta, mitigaciones y owners."
+            },
+            {
+              "type": "heading_bold",
+              "content": "Riesgos operacionales:"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Riesgo",
+                "Señal de alerta",
+                "Mitigación",
+                "Owner"
+              ],
+              "rows": [
+                [
+                  "**Telefonía / WhatsApp Calls** — Retrasos integración o costes unitarios altos",
+                  "Proveedor no entrega en Q2; COGS voz >15% revenue",
+                  "Feature flag + pilotos; negociar precios; fallback a PSTN",
+                  "CTO"
+                ],
+                [
+                  "**Agente de negocio** — Baja adopción o valor percibido bajo",
+                  "Uso &lt;10% de la base en 60 días post-lanzamiento",
+                  "UX con tareas concretas; medir time-to-value; iterar rápido",
+                  "CPO"
+                ],
+                [
+                  "**Churn** — Soporte saturado o bugs en producción",
+                  "Churn logo >5% mensual sostenido",
+                  "Escalar CS, QA, observabilidad; playbooks de retención",
+                  "Head CS"
+                ],
+                [
+                  "**Internacionalización** — UX rota en nuevos idiomas",
+                  "Conversión cae >20% vs ES en mismos verticales",
+                  "Localización incremental + analytics; soporte local",
+                  "CPO"
+                ]
+              ]
+            },
+            {
+              "type": "heading_bold",
+              "content": "Riesgos comerciales:"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Riesgo",
+                "Señal de alerta",
+                "Mitigación",
+                "Owner"
+              ],
+              "rows": [
+                [
+                  "**CAC** — Paid se dispara o baja win-rate",
+                  "Payback >12 meses sostenido",
+                  "Priorizar outbound+partners; mejorar targeting por vertical",
+                  "CRO"
+                ],
+                [
+                  "**Seguridad / compliance** — Bloqueos en deals enterprise",
+                  ">2 deals perdidos por falta SSO/SOC2",
+                  "Acelerar roadmap ISO/SOC2; SSO/auditoría temprana",
+                  "CTO"
+                ]
+              ]
+            },
+            {
+              "type": "heading_bold",
+              "content": "Riesgos financieros:"
+            },
+            {
+              "type": "list_item",
+              "content": "**ENISA:** Préstamo participativo (€300K). Sin garantías, carencia 2–3 años. Riesgo: retraso en aprobación o condiciones peores de las esperadas."
+            },
+            {
+              "type": "list_item",
+              "content": "**Deuda BringAI:** €26.468,48 al 3% anual. Carencia 2 años; 3 pagos anuales (ene-2028/2029/2030). Incluye cláusula de amortización adicional del 20% de beneficios."
+            },
+            {
+              "type": "list_item",
+              "content": "**Runway:** Modelo sensible a velocidad de cierre de ronda. Un retraso de 3 meses en la ronda acorta el runway y obliga a retrasar contrataciones."
+            }
+          ],
+          "flatText": "Riesgos operacionales, financieros y de mercado con señales de alerta, mitigaciones y owners. **ENISA:** Préstamo participativo (€300K). Sin garantías, carencia 2–3 años. Riesgo: retraso en aprobación o condiciones peores de las esperadas. **Deuda BringAI:** €26.468,48 al 3% anual. Carencia 2 años; 3 pagos anuales (ene-2028/2029/2030). Incluye cláusula de amortización adicional del 20% de beneficios. **Runway:** Modelo sensible a velocidad de cierre de ronda. Un retraso de 3 meses en la ronda acorta el runway y obliga a retrasar contrataciones."
+        }
+      ]
+    },
+    {
+      "id": "equipo",
+      "title": "10. Equipo & gobierno",
+      "filename": "10-equipo.mdx",
+      "subsections": [
+        {
+          "id": "10-1-equipo",
+          "title": "10.1 Equipo fundador",
+          "elements": [
+            {
+              "type": "list_item",
+              "content": "**Martín Díaz Morquio — CPO (Co-founder)** — Producto, UX, estrategia de cliente. Administrador solidario."
+            },
+            {
+              "type": "list_item",
+              "content": "**Alejandro Aznar Ferrer — CTO (Co-founder)** — Arquitectura, ingeniería, infraestructura. Administrador solidario."
+            },
+            {
+              "type": "list_item",
+              "content": "**Carlos Cobos — CRO** — Go-to-market, ventas, partnerships. Equity con vesting por hitos/permanencia (ver proforma en hoja Capital)."
+            },
+            {
+              "type": "paragraph",
+              "content": "**Equipo actual (Ene 2026):** 7 personas (3 founders/C-level + Customer Success Manager + Marketing Manager + 3× Senior Backend Dev + Data Engineer + IA Engineer)."
+            },
+            {
+              "type": "paragraph",
+              "content": "**Plan de contratación 2026:** SDR/BDR (May), Account Executive SMB (Jul), Soporte/Onboarding (Sep), RevOps/BizOps (Oct)."
+            },
+            {
+              "type": "paragraph",
+              "content": "**Pool de equity:** 10% FD reservado para equipo (3 miembros actuales) + hasta 5% FD para CRO (vesting por hitos/permanencia)."
+            }
+          ],
+          "flatText": "**Martín Díaz Morquio — CPO (Co-founder)** — Producto, UX, estrategia de cliente. Administrador solidario. **Alejandro Aznar Ferrer — CTO (Co-founder)** — Arquitectura, ingeniería, infraestructura. Administrador solidario. **Carlos Cobos — CRO** — Go-to-market, ventas, partnerships. Equity con vesting por hitos/permanencia (ver proforma en hoja Capital). **Equipo actual (Ene 2026):** 7 personas (3 founders/C-level + Customer Success Manager + Marketing Manager + 3× Senior Backend Dev + Data Engineer + IA Engineer). **Plan de contratación 2026:** SDR/BDR (May), Account Executive SMB (Jul), Soporte/Onboarding (Sep), RevOps/BizOps (Oct). **Pool de equity:** 10% FD reservado para equipo (3 miembros actuales) + hasta 5% FD para CRO (vesting por hitos/permanencia)."
+        },
+        {
+          "id": "10-2-gobierno",
+          "title": "10.2 Gobierno corporativo",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "**Administración actual:** Dos administradores solidarios (Martín + Alejandro)."
+            },
+            {
+              "type": "heading_bold",
+              "content": "Propuesta post-ronda (recomendación):"
+            },
+            {
+              "type": "list_item",
+              "content": "Board de 3 miembros: 2 founders + 1 inversor/independiente."
+            },
+            {
+              "type": "list_item",
+              "content": "Comité mensual de métricas."
+            },
+            {
+              "type": "list_item",
+              "content": "Reporting estandarizado (ver 10.3)."
+            }
+          ],
+          "flatText": "**Administración actual:** Dos administradores solidarios (Martín + Alejandro). Board de 3 miembros: 2 founders + 1 inversor/independiente. Comité mensual de métricas. Reporting estandarizado (ver 10.3)."
+        },
+        {
+          "id": "10-3-reporting",
+          "title": "10.3 Reporting a inversores",
+          "elements": [
+            {
+              "type": "heading_bold",
+              "content": "Formato recomendado:"
+            },
+            {
+              "type": "list_item",
+              "content": "**Update mensual:** MRR/ARR, NRR/GRR, pipeline, burn/runway, hitos roadmap."
+            },
+            {
+              "type": "list_item",
+              "content": "**Board pack trimestral:** P&L, cash, cohorts, riesgos."
+            },
+            {
+              "type": "list_item",
+              "content": "**Fuente de datos:** Este Excel (v23) sirve como fuente de verdad para métricas y reporting."
+            }
+          ],
+          "flatText": "**Update mensual:** MRR/ARR, NRR/GRR, pipeline, burn/runway, hitos roadmap. **Board pack trimestral:** P&L, cash, cohorts, riesgos. **Fuente de datos:** Este Excel (v23) sirve como fuente de verdad para métricas y reporting."
+        }
+      ]
+    },
+    {
+      "id": "apendice",
+      "title": "11. Apéndice",
+      "filename": "11-apendice.mdx",
+      "subsections": [
+        {
+          "id": "11-1-kpis",
+          "title": "11.1 Definición de KPIs",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "KPI",
+                "Definición"
+              ],
+              "rows": [
+                [
+                  "**<Metric term=\"MRR\" />**",
+                  "Monthly Recurring Revenue — ingresos recurrentes mensuales de suscripciones."
+                ],
+                [
+                  "**<Metric term=\"ARR\" />**",
+                  "Annual Recurring Revenue — MRR × 12."
+                ],
+                [
+                  "**<Metric term=\"NRR\" />**",
+                  "Net Revenue Retention — incluye expansiones, contracciones y churn. Objetivo >110%."
+                ],
+                [
+                  "**GRR**",
+                  "Gross Revenue Retention — retención sin expansiones. Mide solo pérdida."
+                ],
+                [
+                  "**<Metric term=\"ARPU\" />**",
+                  "Average Revenue Per User — MRR / clientes activos."
+                ],
+                [
+                  "**<Metric term=\"CAC\" />**",
+                  "Customer Acquisition Cost — coste total de adquirir un cliente (marketing + ventas)."
+                ],
+                [
+                  "**LTV**",
+                  "Lifetime Value — ARPU × (1/churn rate) × Gross Margin."
+                ],
+                [
+                  "**<Metric term=\"Payback\" />**",
+                  "Meses para recuperar el CAC con el margen bruto del cliente."
+                ],
+                [
+                  "**<Metric term=\"Churn\" />**",
+                  "% de clientes o MRR perdidos por período. Logo churn = clientes; MRR churn = revenue."
+                ],
+                [
+                  "**GM**",
+                  "Gross Margin — (Revenue − COGS) / Revenue."
+                ],
+                [
+                  "**<Metric term=\"DSO\" />**",
+                  "Days Sales Outstanding — días promedio de cobro."
+                ]
+              ]
+            }
+          ],
+          "flatText": "Diccionario formal de KPIs (definiciones estándar VC). Convención: métricas de revenue en EUR; churn y retención pueden medirse por **logos** (clientes) o por **revenue** (MRR).\n\n- **MRR (Monthly Recurring Revenue):** ingresos recurrentes mensuales de suscripciones (excluye setup, servicios puntuales y campañas no recurrentes si se reportan aparte). Fórmula: suma de cuotas mensuales activas en el mes.\n- **ARR (Annual Recurring Revenue):** MRR normalizado × 12.\n- **ARPA vs ARPU:**\n  • **ARPA (Average Revenue Per Account):** MRR / nº de cuentas (clientes) activas.\n  • **ARPU (Average Revenue Per User):** MRR / nº de usuarios activos (solo si el pricing depende de usuarios; en B2B suele usarse ARPA).\n- **Logo churn (%):** clientes perdidos en el periodo / clientes al inicio del periodo.\n- **Revenue churn (%):** MRR perdido en el periodo (por bajas y downgrades) / MRR al inicio del periodo.\n- **GRR (Gross Revenue Retention):** retención de revenue sin expansiones. Fórmula: (MRR inicio − MRR perdido por churn/downgrade) / MRR inicio.\n- **NRR (Net Revenue Retention):** retención neta incluyendo expansiones. Fórmula: (MRR inicio − churn/downgrade + expansiones) / MRR inicio.\n- **CAC (Customer Acquisition Cost):** coste total de adquisición en el periodo (marketing + ventas atribuible) / nº de nuevos clientes (logos) adquiridos en el periodo. Definir si incluye salarios, herramientas y comisiones.\n- **Payback (CAC Payback):** meses necesarios para recuperar el CAC con margen bruto. Fórmula: CAC / (ARPA × GM) medido en meses.\n- **Gross Margin (GM):** (Revenue − COGS) / Revenue. En SaaS, COGS típicos: cloud/hosting, IA/compute, WhatsApp/telecom, soporte directamente atribuible.\n- **LTV (Lifetime Value) — neto de COGS:** valor de vida del cliente ajustado por margen. Fórmula habitual: (ARPA × GM) / churn (si churn es mensual, LTV en meses; anualizar si procede). Definir si churn usado es logo o revenue y el periodo (mensual/anual).\n- **DSO (Days Sales Outstanding):** días promedio de cobro. Fórmula típica: (cuentas a cobrar / ingresos del periodo) × nº de días del periodo.\n\nRecomendación de reporting: publicar siempre (1) definición exacta, (2) periodo, (3) si es logo o revenue, y (4) exclusiones (setup/campañas) para comparabilidad."
+        },
+        {
+          "id": "11-2-tablas",
+          "title": "11.2 Tablas completas",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Las tablas completas de P&L (2024–2030), Cash Runway, Capital (cap table), y Hiring Plan están disponibles en el Excel fuente:"
+            },
+            {
+              "type": "heading_bold",
+              "content": "`Lixsa_BusinessPlan_2026_2030_v23_paper_audit_ready.xlsx`"
+            },
+            {
+              "type": "paragraph",
+              "content": "Hojas de referencia:"
+            },
+            {
+              "type": "list_item",
+              "content": "**P&L:** `2024`, `2025`, `2026`, `2027`, `2028`, `2029`, `2030`"
+            },
+            {
+              "type": "list_item",
+              "content": "**Cash:** `Cash_Runway`"
+            },
+            {
+              "type": "list_item",
+              "content": "**Capital:** `Capital`"
+            },
+            {
+              "type": "list_item",
+              "content": "**Hiring:** `Hiring_Plan`"
+            },
+            {
+              "type": "list_item",
+              "content": "**Mercado:** `Mercado & competencia`, `Fuentes_Mercado`"
+            },
+            {
+              "type": "list_item",
+              "content": "**Deuda:** `Financiación`, `Prestamo_BringAI`"
+            }
+          ],
+          "flatText": "Las tablas completas de P&L (2024–2030), Cash Runway, Capital (cap table), y Hiring Plan están disponibles en el Excel fuente: Hojas de referencia: **P&L:** `2024`, `2025`, `2026`, `2027`, `2028`, `2029`, `2030` **Cash:** `Cash_Runway` **Capital:** `Capital` **Hiring:** `Hiring_Plan` **Mercado:** `Mercado & competencia`, `Fuentes_Mercado` **Deuda:** `Financiación`, `Prestamo_BringAI`"
+        },
+        {
+          "id": "11-3-glosario",
+          "title": "11.3 Glosario",
+          "elements": [
+            {
+              "type": "table",
+              "headers": [
+                "Término",
+                "Definición"
+              ],
+              "rows": [
+                [
+                  "**B2B**",
+                  "Business to Business — venta entre empresas."
+                ],
+                [
+                  "**ICP**",
+                  "Ideal Customer Profile — perfil de cliente objetivo."
+                ],
+                [
+                  "**PLG**",
+                  "Product-Led Growth — crecimiento impulsado por el producto (self-serve)."
+                ],
+                [
+                  "**CSW**",
+                  "Customer Service Window — ventana de 24h de WhatsApp para mensajes gratuitos."
+                ],
+                [
+                  "**ENISA**",
+                  "Empresa Nacional de Innovación — préstamos participativos para startups."
+                ],
+                [
+                  "**COGS**",
+                  "Cost of Goods Sold — costes directos del servicio (cloud, WhatsApp, IA)."
+                ],
+                [
+                  "**SDR/BDR**",
+                  "Sales/Business Development Representative — prospección outbound."
+                ],
+                [
+                  "**AE**",
+                  "Account Executive — cierre de ventas."
+                ],
+                [
+                  "**RevOps**",
+                  "Revenue Operations — operaciones y datos de ventas."
+                ],
+                [
+                  "**TTV**",
+                  "Time-to-Value — tiempo hasta que el cliente obtiene valor del producto."
+                ]
+              ]
+            }
+          ],
+          "flatText": "Glosario (términos clave del paper):\n\n- **ICP (Ideal Customer Profile):** perfil de cliente ideal (industria, tamaño, stack, dolor y capacidad de pago) con mayor probabilidad de éxito y retención.\n- **ARPA vs ARPU:** ARPA mide revenue por **cuenta/cliente**; ARPU por **usuario**. En SaaS B2B con pricing por cuenta, ARPA es la métrica recomendada.\n- **TTV (Time-to-Value):** tiempo desde alta hasta el primer resultado útil para el cliente (p. ej., primeras conversaciones resueltas o primera campaña ejecutada).\n- **CS Window (Customer Service Window):** ventana de atención en mensajería (p. ej., 24h) durante la cual los mensajes de servicio pueden seguir reglas/costes diferentes. «[FUENTE_PENDIENTE: política exacta aplicable según WhatsApp/país]».\n- **Template message:** mensaje pre-aprobado para iniciar conversaciones o enviar notificaciones fuera de ventana. Categorías habituales: **utility** (operacional), **marketing** (promocional) y **authentication** (OTP). «[FUENTE_PENDIENTE: nomenclatura y reglas vigentes]».\n- **Utility vs marketing:** clasificación del contenido del mensaje (operacional vs promocional) que impacta aprobación/costes y compliance.\n- **Attach / attach rate:** porcentaje de clientes que contratan un add-on (p. ej., campañas WhatsApp, voz, agente) sobre la base instalada.\n- **Pipeline:** oportunidades abiertas en ventas, normalmente por etapa (lead → MQL/SQL → demo → propuesta → win/lost).\n- **Win-rate:** % de oportunidades (o demos) que se convierten en cliente (wins) en un periodo.\n- **Sales cycle:** días desde primera interacción (o SQL) hasta cierre (win).\n- **PoC / Pilot:** prueba controlada con alcance y KPIs definidos antes de despliegue completo.\n- **COGS:** costes directos del servicio (cloud/IA/WhatsApp/telecom) necesarios para servir a clientes.\n- **GMV:** Gross Merchandise Value; volumen bruto de ventas en e-commerce (si se usa como driver).\n- **NRR/GRR:** métricas de retención de revenue (neto vs bruto). Ver 11.1.\n- **RBAC:** control de acceso basado en roles.\n- **SSO/SCIM:** Single Sign-On / aprovisionamiento automático de usuarios (enterprise).\n- **Outbound / inbound:** adquisición por prospección activa vs demanda entrante.\n- **Partners:** canal de distribución vía agencias/consultoras/implementadores; suele reducir CAC y acelerar expansión geográfica."
+        },
+        {
+          "id": "11-4-legal",
+          "title": "11.4 Legal / disclaimers",
+          "elements": [
+            {
+              "type": "paragraph",
+              "content": "Este documento es informativo y no constituye una oferta de valores. Las proyecciones son estimaciones basadas en supuestos que pueden variar materialmente. Los datos financieros reflejan el modelo interno de la compañía a fecha de febrero 2026. Antes de tomar cualquier decisión de inversión, se recomienda realizar due diligence independiente."
+            }
+          ],
+          "flatText": "Este documento es informativo y no constituye una oferta de valores. Las proyecciones son estimaciones basadas en supuestos que pueden variar materialmente. Los datos financieros reflejan el modelo interno de la compañía a fecha de febrero 2026. Antes de tomar cualquier decisión de inversión, se recomienda realizar due diligence independiente."
+        }
+      ]
+    }
+  ],
+  "datasets": {
+    "00_overview": {
+      "_description": "Datos de la sección 00. Overview — KPIs iniciales Ene-2026, distribución del uso de fondos (pie chart), e hitos clave 2026 (timeline chart).",
+      "kpis": {
+        "_description": "KPIs iniciales reales (Actuals Enero 2026). Datos consolidados de Stripe + Shopify Billing.",
+        "items": [
+          {
+            "label": "MRR",
+            "value": "€2.625",
+            "trend": "Stripe + Shopify Billing",
+            "trendUp": true
+          },
+          {
+            "label": "Clientes pagadores",
+            "value": "17",
+            "trend": "Cohorte Ene-2026",
+            "trendUp": true
+          },
+          {
+            "label": "ARPU",
+            "value": "€154",
+            "trend": "MRR / Clientes",
+            "trendUp": true
+          },
+          {
+            "label": "Churn logo",
+            "value": "17,6%",
+            "trend": "3 de 17 clientes (Dic→Ene)",
+            "trendUp": false
+          }
+        ]
+      },
+      "useOfFunds": {
+        "_description": "Distribución del capital total (€850K = €550K equity + €300K ENISA). Se visualiza como pie/donut chart.",
+        "chartType": "pie",
+        "title": "Uso de los fondos (€850K)",
+        "data": [
+          {
+            "name": "Producto & Ingeniería",
+            "value": 45,
+            "color": "#7f4cf5"
+          },
+          {
+            "name": "Ventas & Marketing",
+            "value": 40,
+            "color": "#4c6cf5"
+          },
+          {
+            "name": "Operaciones & Legal",
+            "value": 15,
+            "color": "#986ef5"
+          }
+        ]
+      },
+      "milestones": {
+        "_description": "4 hitos clave del año 2026. Se visualizan como timeline horizontal con puntos de color por mes.",
+        "items": [
+          {
+            "month": "Abr",
+            "label": "Cierre ronda equity",
+            "color": "#7f4cf5",
+            "icon": "💰"
+          },
+          {
+            "month": "Jul",
+            "label": "Lanzamiento Voz (WhatsApp Calls + líneas)",
+            "color": "#4c6cf5",
+            "icon": "📞"
+          },
+          {
+            "month": "Sep",
+            "label": "Desembolso ENISA",
+            "color": "#986ef5",
+            "icon": "🏦"
+          },
+          {
+            "month": "Oct",
+            "label": "Agente de negocio (upsell base instalada)",
+            "color": "#16a34a",
+            "icon": "🤖"
+          }
+        ]
+      }
+    },
+    "04_traccion": {
+      "_description": "Datos de la sección 04. Tracción — Clientes actuales (cohorte Ene 2026), dashboard de métricas, e ingresos históricos mensuales (Ago 2024 → Ene 2026).",
+      "clientesActuales": {
+        "_description": "17 clientes pagadores en enero 2026. Top 5 por LTV neto histórico, media del resto, y totales/medias globales. Se visualiza como tabla de datos.",
+        "totalClientes": 17,
+        "top5": [
+          {
+            "name": "LIVE4LIFE",
+            "niche": "Real Estate / alquiler habitaciones",
+            "start": "Oct 2024",
+            "mrr": "€350",
+            "ltv": "€5.600",
+            "arpa": "€350"
+          },
+          {
+            "name": "DOMAINE BOUSQUET",
+            "niche": "Wine & Spirits / bodega + enoturismo",
+            "start": "Nov 2024",
+            "mrr": "€429",
+            "ltv": "€5.295",
+            "arpa": "€165"
+          },
+          {
+            "name": "NORTON",
+            "niche": "Wine & Spirits",
+            "start": "Jul 2025",
+            "mrr": "€250",
+            "ltv": "€1.750",
+            "arpa": "€250"
+          },
+          {
+            "name": "LA FOLIE",
+            "niche": "Restaurantes",
+            "start": "Jun 2025",
+            "mrr": "€277",
+            "ltv": "€1.519",
+            "arpa": "€217"
+          },
+          {
+            "name": "MOMOVEN",
+            "niche": "Movilidad / alquiler motos",
+            "start": "Oct 2025",
+            "mrr": "€445",
+            "ltv": "€1.445",
+            "arpa": "€361"
+          }
+        ],
+        "summaryLabel": "Media resto de clientes",
+        "summaryValues": {
+          "mrr": "€87",
+          "ltv": "€665",
+          "arpa": "€105"
+        },
+        "footerLabel": "Total / Media global (17 clientes)",
+        "footerValues": {
+          "mrr": "€2.625",
+          "ltv": "—",
+          "arpa": "€154"
+        }
+      },
+      "kpisDashboard": {
+        "_description": "8 tarjetas KPI del dashboard de métricas — incluye MRR, clientes, ARPU, altas, churn logo, churn MRR, marketing spend, y WhatsApp spend. Datos Ene 2026.",
+        "items": [
+          {
+            "label": "MRR total (bruto)",
+            "value": "€2.625",
+            "trend": "Ene 2026 (Stripe + Shopify)",
+            "trendUp": true
+          },
+          {
+            "label": "Clientes pagadores",
+            "value": "17",
+            "trend": "Cohorte Ene-2026",
+            "trendUp": true
+          },
+          {
+            "label": "ARPU",
+            "value": "€154,39",
+            "trend": "MRR / Clientes",
+            "trendUp": true
+          },
+          {
+            "label": "Altas (nuevos)",
+            "value": "3",
+            "trend": "Nuevos pagadores en Ene",
+            "trendUp": true
+          },
+          {
+            "label": "Churn logo",
+            "value": "17,6%",
+            "trend": "3 clientes perdidos (Dic→Ene)",
+            "trendUp": false
+          },
+          {
+            "label": "Churn MRR",
+            "value": "11,1%",
+            "trend": "€286 MRR perdido",
+            "trendUp": false
+          },
+          {
+            "label": "Marketing spend",
+            "value": "€1.625",
+            "trend": "Meta + Mymco (sin WhatsApp)",
+            "trendUp": false
+          },
+          {
+            "label": "WhatsApp spend",
+            "value": "€516",
+            "trend": "Gasto growth WhatsApp",
+            "trendUp": false
+          }
+        ]
+      },
+      "historicalRevenue": {
+        "_description": "Ingresos mensuales reales desde Ago 2024 hasta Ene 2026 (18 meses). Incluye 4 series: MRR suscripciones (sMRR), ingresos por campañas, total combinado, y número de clientes activos. Se visualiza como gráfico de barras (ingresos) + línea (clientes).",
+        "chartType": "bar+line",
+        "title": "Evolución histórica de ingresos (Ago 2024 → Ene 2026)",
+        "months": [
+          "Ago",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dic",
+          "Ene 25",
+          "Feb",
+          "Mar",
+          "Abr",
+          "May",
+          "Jun",
+          "Jul",
+          "Ago",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dic",
+          "Ene 26"
+        ],
+        "series": {
+          "smrr": {
+            "label": "MRR Suscripciones (€)",
+            "data": [
+              700,
+              1050,
+              1431,
+              1350,
+              0,
+              1947,
+              1900,
+              2182,
+              2000,
+              1350,
+              1980,
+              2380,
+              2030,
+              2029,
+              2484,
+              2478,
+              2852,
+              2625
+            ]
+          },
+          "campaigns": {
+            "label": "Campañas (€)",
+            "data": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              40,
+              0,
+              0,
+              266,
+              209,
+              910,
+              9,
+              74,
+              595,
+              116,
+              921,
+              375,
+              0
+            ]
+          },
+          "totalRevenue": {
+            "label": "Ingresos totales (€)",
+            "data": [
+              700,
+              1050,
+              1431,
+              1350,
+              0,
+              1987,
+              1900,
+              2182,
+              2266,
+              1559,
+              2890,
+              2389,
+              2104,
+              2624,
+              2600,
+              3399,
+              3227,
+              2625
+            ]
+          },
+          "customers": {
+            "label": "Clientes activos",
+            "data": [
+              2,
+              4,
+              5,
+              6,
+              6,
+              7,
+              6,
+              8,
+              8,
+              6,
+              10,
+              11,
+              10,
+              14,
+              16,
+              18,
+              18,
+              17
+            ]
+          }
+        }
+      }
+    },
+    "05_mercado": {
+      "_description": "Datos de la sección 05. Mercado & competencia — Tabla comparativa de 7 competidores y distribución geográfica objetivo.",
+      "competidores": {
+        "_description": "Benchmark competitivo España 2026 para PYME. 7 empresas comparadas por nicho, mercado, pricing, ventaja principal y debilidad. Fuentes: precios públicos consultados feb-2026.",
+        "items": [
+          {
+            "name": "Lixsa.ai",
+            "niche": "Micro‑PYME/PYME · Ventas+soporte WhatsApp",
+            "market": "Local (ES)",
+            "pricing": "29/59/139€",
+            "strength": "Bundle + onboarding rápido",
+            "weakness": "Precio entrada bajo"
+          },
+          {
+            "name": "ManyChat",
+            "niche": "Micro‑PYME y creadores · Marketing IG/FB/WA",
+            "market": "Internacional",
+            "pricing": "Desde ~$15",
+            "strength": "PLG masivo (1M+ users)",
+            "weakness": "TCO WhatsApp variable"
+          },
+          {
+            "name": "Landbot",
+            "niche": "Micro‑PYME + agencias · Builder no‑code",
+            "market": "Local (ES)",
+            "pricing": "€40/€200/€400",
+            "strength": "PLG + no‑code + marca ES",
+            "weakness": "WhatsApp eleva TCO"
+          },
+          {
+            "name": "respond.io",
+            "niche": "PYME/midmarket B2C · Inbox omnicanal",
+            "market": "Internacional",
+            "pricing": "$79/$159/$279",
+            "strength": "Omnicanal + workflows",
+            "weakness": "Caro para micro‑PYME"
+          },
+          {
+            "name": "Trengo",
+            "niche": "Equipos PYME · Inbox omnicanal + IA",
+            "market": "Internacional (EU)",
+            "pricing": "€299/€499",
+            "strength": "Suite para equipos",
+            "weakness": "Fuera rango micro"
+          },
+          {
+            "name": "Zendesk",
+            "niche": "Midmarket/enterprise · Helpdesk omnicanal",
+            "market": "Internacional",
+            "pricing": "$155/agente",
+            "strength": "Estándar de mercado",
+            "weakness": "Overkill para PYME"
+          },
+          {
+            "name": "Gorgias",
+            "niche": "E‑commerce (Shopify) · Helpdesk por tickets",
+            "market": "Internacional",
+            "pricing": "Desde $10",
+            "strength": "Especializado ecommerce",
+            "weakness": "Coste escala con tickets"
+          }
+        ]
+      },
+      "distribucionGeo": {
+        "_description": "Distribución geográfica objetivo de clientes: 50% España, 20% Europa resto, 30% fuera de Europa. Se visualiza como 3 tarjetas KPI.",
+        "items": [
+          {
+            "label": "España",
+            "value": "50%",
+            "trend": "Base operativa y regulación local",
+            "trendUp": true
+          },
+          {
+            "label": "Europa (resto)",
+            "value": "20%",
+            "trend": "Expansión idiomas EU tras validar voz",
+            "trendUp": true
+          },
+          {
+            "label": "Fuera de Europa",
+            "value": "30%",
+            "trend": "LatAm y mercados hispanos/inglés",
+            "trendUp": true
+          }
+        ]
+      }
+    },
+    "08_financiero": {
+      "_description": "Datos de la sección 08. Plan financiero — Palancas de escenarios para modelar Base/Upside/Downside.",
+      "kpisEscenarios": {
+        "_description": "6 palancas clave para modelar escenarios financieros: growth, churn, ARPU/attach, CAC, gross margin, hiring pace. Se visualizan como 6 tarjetas KPI.",
+        "items": [
+          {
+            "label": "Growth",
+            "value": "Clientes/mes",
+            "trend": "Palanca principal",
+            "trendUp": true
+          },
+          {
+            "label": "Churn",
+            "value": "% mensual",
+            "trend": "Impacto en NRR y runway",
+            "trendUp": false
+          },
+          {
+            "label": "ARPU / Attach",
+            "value": "€/cliente",
+            "trend": "Voz + Agente = upsell",
+            "trendUp": true
+          },
+          {
+            "label": "CAC",
+            "value": "€/cliente",
+            "trend": "Eficiencia S&M",
+            "trendUp": false
+          },
+          {
+            "label": "Gross Margin",
+            "value": "% GM",
+            "trend": "COGS cloud + WhatsApp",
+            "trendUp": true
+          },
+          {
+            "label": "Hiring pace",
+            "value": "Headcount",
+            "trend": "Burn rate driver",
+            "trendUp": false
+          }
+        ]
+      }
+    }
+  }
+}

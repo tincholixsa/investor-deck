@@ -1,0 +1,240 @@
+import { HistoricalMrrChart } from '../../../components/charts/DashboardWidgets';
+
+<Section id="financiero" title="08. Plan financiero">
+
+<div id="08-1-2026">
+### 08.1 P&L 2026 — Año de inversión
+
+<EvidenceBlock title="Datos del modelo financiero (Excel v23) — Escenario base">
+  Inputs editables en columna derecha de cada hoja anual. Todas las cifras en €. Costes fundadores a €2.179/mes (reducción voluntaria).
+</EvidenceBlock>
+
+**Supuestos clave 2026:**
+
+| Parámetro | Valor | Notas |
+|---|---|---|
+| Clientes inicio (Dic 2025) | 18 | Base instalada real |
+| ARPU inicio | €158 | MRR/clientes Dic-25 |
+| Crecimiento mensual clientes | Variable | Ramp lineal enero→diciembre |
+| ARPU YoY growth | +5% | Efecto voz + agente |
+| Campaign share of ARPU | ~15% | Ingresos campañas / total |
+| COV ratio (excl. processing) | ~12% | IA + WhatsApp + cloud |
+| Marketing ratio | ~10% del revenue | Meta + outbound + eventos |
+| Salary inflation YoY | 3,0% | No-founders sobre base 2025 |
+| Fixed cost inflation YoY | 3,0% | Software, gestoría, oficina |
+| Monthly churn rate | ~3% | Logo churn objetivo |
+| Inversión planificada | €850.000 | €550K equity (Abr) + €300K ENISA (Sep) |
+
+**Estructura de costes 2026:**
+
+- **HHRR fundadores:** CTO + CPO + CRO a €2.179/mes cada uno.
+- **HHRR equipo:** CS Manager, Marketing, 3× Senior Dev, Data Eng, IA Eng (todos desde Ene).
+- **Nuevas contrataciones 2026:** SDR/BDR (May), Account Executive (Jul), Soporte/Onboarding (Sep), RevOps (Oct).
+- **Costes fijos:** Software tools ~€1.350/mes, gestoría ~€550/mes, oficina €3.500/mes (desde May), viajes €800/mes.
+
+</div>
+
+<div id="08-2-2027">
+### 08.2 P&L 2027
+
+**Supuestos clave 2027:**
+
+| Parámetro | Valor |
+|---|---|
+| Salary inflation (non-founders) | 10,0% |
+| Fixed cost inflation | 3,0% |
+| Sales & Ops team | Consolidación + escala del equipo comercial de 2026 |
+
+A partir de 2027 se consolida el equipo de Sales & Ops contratado en 2026 como una línea agregada, y se aplica inflación salarial del 10% para retener talento.
+
+</div>
+
+<div id="08-3-2028">
+### 08.3 P&L 2028 — Escala y eficiencia operativa
+
+<EvidenceBlock title="Proyección basada en modelo financiero (Excel v23) — Escenario base">
+  Estructura P&L mensual idéntica a 2027: Revenue (sMRR + Campaigns + Voice + Agent), COV, Marketing, HHRR y Fixed Costs. Inputs editables por año en la hoja correspondiente.
+</EvidenceBlock>
+
+**Supuestos clave 2028:**
+
+| Parámetro | Valor | Notas |
+|---|---|---|
+| Salary inflation YoY (non-founders) | 10,0% | Retención de talento técnico y comercial |
+| Fixed cost inflation YoY | 3,0% | Software, gestoría, oficina |
+| COV ratio (excl. processing) | ~22% | Optimización costes IA + WhatsApp (vs 27% en 2027) |
+| Marketing ratio | ~26% | Reducción progresiva por eficiencia de canales |
+| Processing commission rate | 3,5% | Sin cambios |
+| Monthly churn rate | ~2,8% | Mejora por madurez de producto y CS |
+| Voice share of ARPU | 10% | Estabilizado tras lanzamiento 2026 |
+| Agent share of ARPU | 10% | Estabilizado tras lanzamiento Q4 2026 |
+| ARPU YoY growth | +5% | Efecto attach de voz + agente consolidado |
+
+**Estructura de costes 2028:**
+
+- **HHRR:** Equipo consolidado de 2026-2027 con inflación del 10%. Fundadores mantienen salario reducido. Sales & Ops como línea agregada (SDR, AE, Soporte, RevOps contratados en 2026).
+- **Costes variables:** COV baja al 22% por optimización de proveedores IA/cloud y negociación de tarifas WhatsApp. Telephony COGS proporcional al revenue de voz.
+- **Marketing:** Ratio objetivo ~26% del revenue mensual. Mix: Paid (Meta), outbound, partners, webinars, contenido.
+- **Costes fijos:** Software tools, gestoría, oficina y viajes con inflación del 3%.
+
+**KPIs objetivo 2028:**
+
+| Métrica | Objetivo |
+|---|---|
+| ARR run-rate (fin año) | €0,7–0,9M |
+| Gross Margin | ≥ 70% |
+| NRR | ≥ 110–115% |
+| Churn logo mensual | ≤ 2,8% |
+| Payback | ≤ 9 meses |
+
+</div>
+
+<div id="08-4-2029">
+### 08.4 P&L 2029 — Optimización y camino a break-even
+
+<EvidenceBlock title="Proyección basada en modelo financiero (Excel v23) — Escenario base">
+  Escalado del modelo. Foco en optimización de unit economics y margen bruto. Misma estructura P&L con supuestos actualizados.
+</EvidenceBlock>
+
+**Supuestos clave 2029:**
+
+| Parámetro | Valor | Notas |
+|---|---|---|
+| Salary inflation YoY (non-founders) | 10,0% | Retención talento |
+| Fixed cost inflation YoY | 3,0% | Ajuste inflación |
+| COV ratio (excl. processing) | ~20% | Economías de escala en IA + cloud |
+| Marketing ratio | ~23% | Inbound y PLG ganan peso vs paid |
+| Processing commission rate | 3,5% | Sin cambios |
+| Monthly churn rate | ~2,4% | Mejora por retención proactiva + NPS |
+| Voice share of ARPU | 10% | Estable |
+| Agent share of ARPU | 10% | Estable |
+| ARPU YoY growth | +5% | Pricing v2 + upsells enterprise |
+
+**Estructura de costes 2029:**
+
+- **HHRR:** Equipo tech y comercial completo. Posible incorporación de Compliance/Security (PT) para ISO/SOC2 readiness (~€40K/año). Inflación salarial 10% sobre base no-fundadores.
+- **Costes variables:** COV al 20% — eficiencia por volumen en proveedores cloud/IA. Telephony COGS estable proporcionalmente.
+- **Marketing:** Ratio baja al 23%. Canales orgánicos (PLG, inbound, partners) reducen dependencia de paid.
+- **Costes fijos:** Incremento moderado (3%). Posible upgrade de oficina si headcount supera capacidad.
+
+**KPIs objetivo 2029:**
+
+| Métrica | Objetivo |
+|---|---|
+| ARR run-rate (fin año) | €1,5–2,0M |
+| Gross Margin | ≥ 75% |
+| NRR | ≥ 115% |
+| Churn logo mensual | ≤ 2,4% |
+| EBITDA | Aproximándose a break-even |
+| Canal partners | ≥ 25% de logos |
+
+</div>
+
+<div id="08-5-2030">
+### 08.5 P&L 2030 — Rentabilidad operativa
+
+<EvidenceBlock title="Proyección basada en modelo financiero (Excel v23) — Escenario base">
+  Año de maduración del modelo. Objetivo: rentabilidad operativa sostenida y EBITDA positivo.
+</EvidenceBlock>
+
+**Supuestos clave 2030:**
+
+| Parámetro | Valor | Notas |
+|---|---|---|
+| Salary inflation YoY (non-founders) | 10,0% | Retención |
+| Fixed cost inflation YoY | 3,0% | Ajuste estándar |
+| COV ratio (excl. processing) | ~18% | Máxima eficiencia operativa |
+| Marketing ratio | ~21% | Predominio de canales orgánicos y PLG |
+| Processing commission rate | 3,5% | Sin cambios |
+| Monthly churn rate | ~2,0% | Best-in-class para segmento SMB |
+| Voice share of ARPU | 10% | Estable — producto maduro |
+| Agent share of ARPU | 10% | Estable — producto maduro |
+| ARPU YoY growth | +5% | Enterprise add-ons + pricing localizado |
+
+**Estructura de costes 2030:**
+
+- **HHRR:** Equipo estabilizado. Contrataciones selectivas solo para expansión geográfica o verticales nuevas. Fundadores pueden normalizar salario si EBITDA es positivo.
+- **Costes variables:** COV al 18% — mejor posición negociadora por volumen, optimización de prompts/modelos IA, WhatsApp pricing maduro.
+- **Marketing:** Ratio al 21% — mix equilibrado: PLG (self-serve) + partners + ABM para enterprise. Paid solo como acelerador puntual.
+- **Costes fijos:** Incremento 3%. Multi-region hosting EU si se implementa data residency.
+
+**KPIs objetivo 2030:**
+
+| Métrica | Objetivo |
+|---|---|
+| ARR run-rate (fin año) | €3,0–4,0M |
+| Gross Margin | ≥ 78% |
+| NRR | ≥ 115–120% |
+| Churn logo mensual | ≤ 2,0% |
+| EBITDA | Positivo y sostenido |
+| LTV/CAC | > 5× |
+
+</div>
+
+<div id="08-6-supuestos">
+### 08.6 Supuestos & dependencias
+
+<EvidenceBlock title="Supuestos base del plan (hoja 'Supuestos_y_Riesgos')">
+  Cada supuesto tiene una señal de alerta, una mitigación y un owner/fecha de revisión.
+</EvidenceBlock>
+
+| Supuesto | Base | Señal de alerta | Mitigación |
+|---|---|---|---|
+| **Telefonía / WhatsApp Calls** | Proveedor listo + compliance OK (Q2 2026) | Retrasos integración / costes altos | Feature flag + pilotos; negociar; fallback PSTN |
+| **Internacionalización** | ES→EU idiomas sin romper UX | Conversión cae en nuevos idiomas | Localización incremental + analytics |
+| **Agente de negocio** | Valor claro para managers (Q4 2026) | Baja adopción | UX con tareas concretas; medir TTV; iterar |
+| **Churn** | Churn logo ≈ 2-3% mensual | Soporte saturado / bugs | Escalar CS, QA, observabilidad |
+| **CAC** | Payback ≈ 12m | Paid se dispara / baja win-rate | Priorizar outbound+partners; mejorar targeting |
+| **Seguridad / compliance** | Requisitos enterprise crecen | Bloqueos en deals | SSO/auditoría; roadmap ISO/SOC2 |
+
+</div>
+
+<div id="08-7-escenarios">
+### 08.7 Escenarios & sensitivities
+
+Se recomienda modelar **Base / Upside / Downside** tocando 6 palancas:
+
+<KpiCards data={[
+  { label: 'Growth', value: 'Clientes/mes', trend: 'Palanca principal', trendUp: true },
+  { label: 'Churn', value: '% mensual', trend: 'Impacto en NRR y runway', trendUp: false },
+  { label: 'ARPU / Attach', value: '€/cliente', trend: 'Voz + Agente = upsell', trendUp: true },
+  { label: 'CAC', value: '€/cliente', trend: 'Eficiencia S&M', trendUp: false },
+  { label: 'Gross Margin', value: '% GM', trend: 'COGS cloud + WhatsApp', trendUp: true },
+  { label: 'Hiring pace', value: 'Headcount', trend: 'Burn rate driver', trendUp: false },
+]} />
+
+**Sensibilidades sugeridas:**
+
+| Escenario | Impacto estimado |
+|---|---|
+| +1pp churn mensual | Reduce ARR ~12% anual; acorta runway |
+| +20% CAC | Payback >12m; reduce eficiencia S&M |
+| −10% ARPU | Margen bruto cae; retrasa break-even |
+| +10% COGS voz/WhatsApp | GM comprimido ~2-3pp |
+| Retraso ronda 3 meses | Runway se acorta; retrasar hiring |
+
+</div>
+
+<div id="08-8-unit">
+### 08.8 Unit economics (CAC / LTV / Payback)
+
+<EvidenceBlock title="Métricas unitarias — Estructura del modelo">
+  Los cálculos detallados están en la hoja KPIs_Ratios, enlazados a los P&L anuales.
+</EvidenceBlock>
+
+| Métrica | Definición | Objetivo 2026 |
+|---|---|---|
+| **CAC Marketing** | Gasto marketing / nuevos clientes | Tracking mensual |
+| **CAC S&M** | (Marketing + equipo ventas) / nuevos clientes | ≤ €1.500 |
+| **ARPU medio** | MRR total / clientes activos | €150–200 |
+| **Churn rate** | % clientes perdidos / mes | ≤ 3% |
+| **LTV** | ARPU × (1/churn) × GM | > 3× CAC |
+| **Payback** | CAC / (ARPU × GM) | ≤ 12 meses |
+
+**Evolución histórica de ingresos (Ago 2024 → Ene 2026):**
+
+<HistoricalMrrChart client:visible />
+
+</div>
+
+</Section>

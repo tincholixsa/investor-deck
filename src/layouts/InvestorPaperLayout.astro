@@ -1,0 +1,385 @@
+---
+import '../styles/global.css';
+import TreeMenu from '../components/TreeMenu.astro';
+import ExportJsonButton from '../components/ExportJsonButton.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Lixsa Investment Paper" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Language selector -->
+    <link rel="stylesheet" href="/css/language-selector.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content container">
+        <a href="/" class="logo">
+          <img src="/images/lixsa-lockup-dark.svg" alt="Lixsa" height="45" />
+        </a>
+        <!-- Hamburger button (mobile only) -->
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menú de navegación">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <!-- Desktop CTA (hidden on mobile) -->
+        <div class="header-actions">
+          <a href="#contact" class="button-primary">Solicitar deck / Contacto</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- Mobile Drawer -->
+    <nav id="mobile-drawer" class="mobile-drawer">
+      <div class="drawer-header">
+        <span class="drawer-title">Contenido</span>
+        <button id="drawer-close-btn" class="drawer-close" aria-label="Cerrar menú">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-menu-content">
+        <TreeMenu />
+      </div>
+    </nav>
+
+    <div class="container layout-grid">
+      <aside class="sidebar">
+        <div class="sidebar-sticky">
+          <TreeMenu />
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <slot />
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-cta-section">
+      <div class="container footer-content">
+        <!-- Language selector injected here by JS -->
+        <ExportJsonButton />
+        <a href="#contact" class="button-primary footer-cta-btn">Solicitar deck / Contacto</a>
+      </div>
+      <div class="container footer-legal">
+        <span>© 2025 Walkon Livos SL</span>
+        <span class="footer-legal-sep">·</span>
+        <a href="/v2/es/politica-de-privacidad/" target="_blank" rel="noopener">Política de privacidad</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="/v2/es/terminos-y-condiciones/" target="_blank" rel="noopener">Términos y condiciones</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="/v2/es/cookies/" target="_blank" rel="noopener">Cookies</a>
+      </div>
+    </footer>
+
+    <style is:global>
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--bg-soft);
+        border-bottom: 1px solid var(--border);
+        padding: var(--spacing-3) 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo strong {
+        font-family: var(--font-family-heading);
+        font-size: 1.5rem;
+        letter-spacing: -0.02em;
+        color: var(--revenue);
+      }
+
+      /* --- Hamburger Button --- */
+      .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s;
+      }
+
+      .hamburger-btn:hover {
+        background-color: var(--border);
+      }
+
+      .hamburger-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--title);
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+
+      /* --- Mobile Drawer --- */
+      .drawer-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(27, 26, 27, 0.4);
+        z-index: 200;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .drawer-overlay.open {
+        display: block;
+        opacity: 1;
+      }
+
+      .mobile-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        max-width: 85vw;
+        background-color: var(--bg);
+        z-index: 210;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .mobile-drawer.open {
+        transform: translateX(0);
+      }
+
+      .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-4);
+        border-bottom: 1px solid var(--border);
+        background-color: var(--bg-soft);
+      }
+
+      .drawer-title {
+        font-family: var(--font-family-heading);
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--title);
+      }
+
+      .drawer-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        color: var(--title);
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s;
+      }
+
+      .drawer-close:hover {
+        background-color: var(--border);
+      }
+
+      .drawer-menu-content {
+        padding: var(--spacing-3);
+      }
+
+      /* --- Footer CTA --- */
+      .footer-cta-section {
+        display: block;
+        padding: var(--spacing-6) 0;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        background-color: var(--bg-soft);
+      }
+
+      .footer-cta-btn {
+        width: auto;
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-4);
+      }
+
+      .footer-legal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: var(--spacing-3) 0;
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        border-top: 1px solid var(--border);
+        margin-top: var(--spacing-3);
+      }
+
+      .footer-legal a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-legal a:hover {
+        color: var(--revenue);
+      }
+
+      .footer-legal-sep {
+        opacity: 0.4;
+      }
+
+      /* --- Main Content --- */
+      .main-content {
+        padding: var(--spacing-6) 0;
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .sidebar-sticky {
+        position: sticky;
+        top: calc(80px + var(--spacing-6));
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        padding-right: var(--spacing-2);
+      }
+
+      /* Custom scrollbar for sidebar */
+      .sidebar-sticky::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-sticky::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .sidebar-sticky::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 4px;
+      }
+
+      /* DESKTOP: Hide hamburger, show sidebar and header CTA */
+      @media (min-width: 768px) {
+        .hamburger-btn {
+          display: none;
+        }
+
+        .header-actions {
+          display: flex;
+        }
+
+        .sidebar {
+          display: block;
+          border-right: 1px solid var(--border);
+          padding-right: var(--spacing-6);
+          padding-top: var(--spacing-6);
+          padding-bottom: var(--spacing-6);
+        }
+
+        .layout-grid {
+          grid-template-columns: 280px 1fr;
+        }
+
+        .footer-cta-btn {
+          display: none;
+        }
+      }
+
+      /* MOBILE: Hide desktop CTA, show hamburger */
+      @media (max-width: 767px) {
+        .header-actions {
+          display: none;
+        }
+
+        .logo img {
+          height: 32px;
+        }
+
+        .main-content {
+          padding: var(--spacing-2) 0;
+        }
+
+        .paper-section {
+          margin-bottom: var(--spacing-5);
+        }
+
+        .paper-top {
+          margin-bottom: var(--spacing-3);
+          padding-bottom: var(--spacing-2);
+        }
+      }
+    </style>
+
+    <!-- Drawer Toggle Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const drawerCloseBtn = document.getElementById('drawer-close-btn');
+        const overlay = document.getElementById('mobile-drawer-overlay');
+        const drawer = document.getElementById('mobile-drawer');
+
+        function openDrawer() {
+          drawer?.classList.add('open');
+          overlay?.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+          drawer?.classList.remove('open');
+          overlay?.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        hamburgerBtn?.addEventListener('click', openDrawer);
+        drawerCloseBtn?.addEventListener('click', closeDrawer);
+        overlay?.addEventListener('click', closeDrawer);
+
+        // Close drawer when clicking a menu link
+        drawer?.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeDrawer);
+        });
+      });
+    </script>
+
+    <!-- Language selector (must load after footer) -->
+    <script is:inline src="/js/language-selector.js"></script>
+  </body>
+</html>

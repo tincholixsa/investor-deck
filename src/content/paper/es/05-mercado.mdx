@@ -1,0 +1,90 @@
+import ClientsTable from '../../../components/charts/ClientsTable';
+import { GeoDistributionChart } from '../../../components/charts/DashboardWidgets';
+
+<Section id="mercado" title="05. Mercado & competencia">
+
+<div id="05-1-tam">
+### 05.1 Tamaño de mercado (España 2026) — TAM / SAM / SOM
+
+<EvidenceBlock title="Fuentes: INE (DIRCE + TIC 2024) · Pricing público Lixsa · Foco PYME · SaaS conversacional (WhatsApp/DMs)">
+  Dimensionamiento top-down con datos públicos. Proyección 2026 aplicando +1,7% anual sobre DIRCE 2025.
+</EvidenceBlock>
+
+**Inputs clave (fuentes INE):**
+
+- **Empresas activas (DIRCE 1/1/2025):** 3,15M (\<10 empleados) + 161K (10+ empleados).
+- **% con Internet:** 79,9% (\<10 empl.) / 99% (10+ empl.).
+- **% usan medios sociales:** 37,8% (\<10 empl.) / 69,7% (10+ empl.).
+- **% venden por e‑commerce:** 8,6% (\<10 empl.) / 26,6% (10+ empl.).
+- **% emplean IA:** 13,4% (\<10 empl.) / 21,1% (10+ empl.).
+
+**Definiciones operativas:**
+
+- **<Metric term="TAM" />** — Empresas con Internet (proxy mínimo para SaaS conversacional).
+- **<Metric term="SAM" /> (social)** — Empresas con Internet que usan medios sociales (proxy de operación en DMs).
+- **SAM (e‑commerce)** — Empresas con Internet que venden online (alta propensión a automatización).
+- **SAM (IA)** — Empresas con Internet que emplean IA (proxy de readiness para agentes).
+
+**SOM modelado (captura anual sobre SAM social):**
+
+| Escenario | % captura | Notas |
+|---|---|---|
+| **Bajo** | 0,02% | Cuota conservadora primer año |
+| **Base** | 0,07% | Escenario plan |
+| **Alto** | 0,20% | Crecimiento excepcional |
+
+</div>
+
+<div id="05-2-landscape">
+### 05.2 Panorama competitivo (España 2026 · PYME)
+
+El campo competitivo se divide en tres familias:
+
+1. **PLG para micro‑PYME** (builders/no‑code y automatización DM): ManyChat, Landbot.
+2. **Suites omnicanal/inbox para equipos** (más caras, orientadas a agentes): respond.io, Trengo, Zendesk.
+3. **Especialistas e‑commerce y/o consultoría** (enfoque conversión o proyectos): Oct8ne, Gorgias; y players locales enterprise (Hubtype, Aunoa, Inbenta).
+
+> **Contexto clave:** Desde 01‑jul‑2025 WhatsApp Business Platform migra a pricing por mensaje (template) y utility templates dentro de Customer Service Window pasan a ser gratis — esto favorece agentes que resuelven dentro de la ventana y controlan el uso de plantillas.
+
+<ClientsTable client:visible clients={[
+  { name: 'Lixsa.ai', niche: 'Micro‑PYME/PYME · Ventas+soporte WhatsApp', start: 'Local (ES)', mrr: '29/59/139€', ltv: 'Bundle + onboarding rápido', arpa: 'Precio entrada bajo' },
+  { name: 'ManyChat', niche: 'Micro‑PYME y creadores · Marketing IG/FB/WA', start: 'Internacional', mrr: 'Desde ~$15', ltv: 'PLG masivo (1M+ users)', arpa: 'TCO WhatsApp variable' },
+  { name: 'Landbot', niche: 'Micro‑PYME + agencias · Builder no‑code', start: 'Local (ES)', mrr: '€40/€200/€400', ltv: 'PLG + no‑code + marca ES', arpa: 'WhatsApp eleva TCO' },
+  { name: 'respond.io', niche: 'PYME/midmarket B2C · Inbox omnicanal', start: 'Internacional', mrr: '$79/$159/$279', ltv: 'Omnicanal + workflows', arpa: 'Caro para micro‑PYME' },
+  { name: 'Trengo', niche: 'Equipos PYME · Inbox omnicanal + IA', start: 'Internacional (EU)', mrr: '€299/€499', ltv: 'Suite para equipos', arpa: 'Fuera rango micro' },
+  { name: 'Zendesk', niche: 'Midmarket/enterprise · Helpdesk omnicanal', start: 'Internacional', mrr: '$155/agente', ltv: 'Estándar de mercado', arpa: 'Overkill para PYME' },
+  { name: 'Gorgias', niche: 'E‑commerce (Shopify) · Helpdesk por tickets', start: 'Internacional', mrr: 'Desde $10', ltv: 'Especializado ecommerce', arpa: 'Coste escala con tickets' },
+]} footerLabel="Fuentes: precios públicos consultados feb‑2026" footerValues={{ mrr: '', ltv: '', arpa: '' }} />
+
+</div>
+
+<div id="05-3-diferenciacion">
+### 05.3 Diferenciación (cómo ganamos en PYME)
+
+- **UI/UX a nivel consumidor** — Setup sin fricción, experiencia familiar.
+- **Time‑to‑value en horas** (no meses) — Plantillas, onboarding guiado, integraciones e‑commerce.
+- **Enfoque "Primero la Comunicación"** — WhatsApp/DMs como canal core (no un añadido a helpdesk).
+- **Control de coste WhatsApp** — Optimizar resolución dentro de Customer Service Window; minimizar plantillas billables.
+- **Bundle orientado a conversión** — Campañas, carritos, pedidos + agente IA (soporte + ventas).
+
+</div>
+
+<div id="05-4-riesgos-competitivos">
+### 05.4 Riesgos competitivos y mitigaciones
+
+- **R1) PLG global (ManyChat)** compite por precio y simplicidad → *Mitigación:* verticales con ROI claro + bundle e‑commerce + soporte.
+- **R2) Suites helpdesk (Zoho/Freshdesk/Zendesk)** entran por soporte → *Mitigación:* posicionamiento "ventas por WhatsApp" + TTV rápido.
+- **R3) Coste variable WhatsApp** (per‑message pricing) → *Mitigación:* pricing usage‑based + optimización CSW + analítica de costes por plantilla.
+- **R4) Players locales enterprise** neutralizan cuentas grandes → *Mitigación:* segmentación (SMB/mid) y roadmap enterprise solo cuando NRR/ACV lo justifique.
+
+</div>
+
+<div id="05-5-distribucion">
+### 05.5 Distribución geográfica objetivo
+
+<GeoDistributionChart client:visible />
+
+<Footnotes notes={["España (50%): Base operativa, regulación local conocida, equipo comercial en Alicante. Mercado más maduro para Lixsa con tracción probada.", "Europa resto (20%): Expansión post-voz (Q3 2026). Prioridad: PT, FR, IT por proximidad lingüística y regulatoria. UK/DE como tier 2.", "LatAm & otros (30%): WhatsApp dominante como canal B2C. Mercados hispanos con alta adopción. Argentina y México como primeros targets por red de founders."]} />
+</div>
+
+</Section>

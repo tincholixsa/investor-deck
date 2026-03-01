@@ -1,0 +1,137 @@
+---
+const languages = [
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'pt', label: 'Português', flag: '🇵🇹' },
+];
+
+// Detect current language from URL
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.split('/')[1] || 'es';
+---
+
+<div class="lang-selector">
+  <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </svg>
+    <span class="lang-current">{languages.find(l => l.code === currentLang)?.label || 'Español'}</span>
+    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+  <ul id="lang-dropdown" class="lang-dropdown">
+    {languages.map(lang => (
+      <li>
+        <a
+          href={`/${lang.code}/investor/paper`}
+          class={`lang-option ${lang.code === currentLang ? 'active' : ''}`}
+          data-lang={lang.code}
+        >
+          <span class="lang-flag">{lang.flag}</span>
+          <span>{lang.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .lang-selector {
+    position: relative;
+    display: inline-block;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: var(--font-family-body);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+  }
+
+  .lang-toggle:hover {
+    border-color: var(--revenue);
+    color: var(--title);
+  }
+
+  .lang-chevron {
+    transition: transform 0.2s;
+  }
+
+  .lang-selector.open .lang-chevron {
+    transform: rotate(180deg);
+  }
+
+  .lang-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    padding: 4px;
+    min-width: 160px;
+    z-index: 50;
+  }
+
+  .lang-selector.open .lang-dropdown {
+    display: block;
+  }
+
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .lang-option:hover {
+    background-color: var(--bg-soft);
+    color: var(--title);
+  }
+
+  .lang-option.active {
+    color: var(--revenue);
+    font-weight: 500;
+  }
+
+  .lang-flag {
+    font-size: 1.1rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const selector = document.querySelector('.lang-selector');
+    const toggle = document.getElementById('lang-toggle');
+
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selector?.classList.toggle('open');
+    });
+
+    document.addEventListener('click', () => {
+      selector?.classList.remove('open');
+    });
+  });
+</script>

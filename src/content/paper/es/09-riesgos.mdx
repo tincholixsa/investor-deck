@@ -1,0 +1,29 @@
+<Section id="riesgos" title="09. Riesgos & mitigaciones">
+
+<EvidenceBlock title="Matriz de riesgos (hoja 'Supuestos_y_Riesgos' + '09. Riesgos')">
+  Riesgos operacionales, financieros y de mercado con señales de alerta, mitigaciones y owners.
+</EvidenceBlock>
+
+**Riesgos operacionales:**
+
+| Riesgo | Señal de alerta | Mitigación | Owner |
+|---|---|---|---|
+| **Telefonía / WhatsApp Calls** — Retrasos integración o costes unitarios altos | Proveedor no entrega en Q2; COGS voz >15% revenue | Feature flag + pilotos; negociar precios; fallback a PSTN | CTO |
+| **Agente de negocio** — Baja adopción o valor percibido bajo | Uso &lt;10% de la base en 60 días post-lanzamiento | UX con tareas concretas; medir time-to-value; iterar rápido | CPO |
+| **Churn** — Soporte saturado o bugs en producción | Churn logo >5% mensual sostenido | Escalar CS, QA, observabilidad; playbooks de retención | Head CS |
+| **Internacionalización** — UX rota en nuevos idiomas | Conversión cae >20% vs ES en mismos verticales | Localización incremental + analytics; soporte local | CPO |
+
+**Riesgos comerciales:**
+
+| Riesgo | Señal de alerta | Mitigación | Owner |
+|---|---|---|---|
+| **CAC** — Paid se dispara o baja win-rate | Payback >12 meses sostenido | Priorizar outbound+partners; mejorar targeting por vertical | CRO |
+| **Seguridad / compliance** — Bloqueos en deals enterprise | >2 deals perdidos por falta SSO/SOC2 | Acelerar roadmap ISO/SOC2; SSO/auditoría temprana | CTO |
+
+**Riesgos financieros:**
+
+- **ENISA:** Préstamo participativo (€300K). Sin garantías, carencia 2–3 años. Riesgo: retraso en aprobación o condiciones peores de las esperadas.
+- **Deuda BringAI:** €26.468,48 al 3% anual. Carencia 2 años; 3 pagos anuales (ene-2028/2029/2030). Incluye cláusula de amortización adicional del 20% de beneficios.
+- **Runway:** Modelo sensible a velocidad de cierre de ronda. Un retraso de 3 meses en la ronda acorta el runway y obliga a retrasar contrataciones.
+
+</Section>

@@ -1,0 +1,81 @@
+---
+import MetricTooltip, { termDictionary } from '../MetricTooltip.astro';
+
+interface Kpi {
+  label: string;
+  value: string;
+  trend?: string;
+  trendUp?: boolean;
+}
+
+interface Props {
+  data: Kpi[];
+}
+
+const { data } = Astro.props;
+---
+
+<div class="kpi-grid">
+  {data.map((kpi) => (
+    <div class="kpi-card">
+      <div class="kpi-label">
+        {termDictionary.hasOwnProperty(kpi.label) ? (
+          <MetricTooltip term={kpi.label as any} />
+        ) : (
+          kpi.label
+        )}
+      </div>
+      <div class="kpi-value">{kpi.value}</div>
+      {kpi.trend && (
+        <div class={`kpi-trend ${kpi.trendUp ? 'trend-up' : 'trend-down'}`}>
+          {kpi.trendUp ? '↑' : '↓'} {kpi.trend}
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-4);
+    margin: var(--spacing-4) 0;
+  }
+
+  .kpi-card {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-4);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .kpi-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-1);
+    font-weight: 500;
+  }
+
+  .kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-family-heading);
+    color: var(--text);
+  }
+
+  .kpi-trend {
+    font-size: 0.85rem;
+    margin-top: var(--spacing-2);
+    font-weight: 500;
+  }
+
+  .trend-up {
+    color: var(--positive);
+  }
+
+  .trend-down {
+    color: var(--negative);
+  }
+</style>

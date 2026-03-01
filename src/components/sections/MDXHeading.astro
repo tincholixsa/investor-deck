@@ -1,0 +1,57 @@
+---
+const props = Astro.props;
+let textContent = '';
+
+// Astro passes children as a slot, but sometimes plain text comes in as children prop in MDX
+// A slot render is needed to get the raw string if we want to split it.
+const htmlStr = await Astro.slots.render('default');
+
+// Strip any inner HTML just in case, or match directly on the text
+// Since we expect the child to just be the text "08.8 Unit economics..."
+const numberMatch = htmlStr.match(/^([\d\.]+)\s+(.*)/);
+const titleNumber = numberMatch ? numberMatch[1] : '';
+const titleText = numberMatch ? numberMatch[2] : htmlStr;
+
+const HeadingTag = "h3";
+---
+
+<HeadingTag {...props} class="mdx-heading">
+  {titleNumber ? (
+    <><span class="title-number">{titleNumber}</span><span set:html={titleText} /></>
+  ) : (
+    <span set:html={htmlStr} />
+  )}
+</HeadingTag>
+
+<style is:global>
+  .title-number {
+    font-size: 0.7em;
+    opacity: 0.8;
+    margin-right: var(--spacing-2);
+    font-weight: 500;
+  }
+  
+  .mdx-heading {
+    position: relative;
+    padding-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+    display: inline-block; /* Makes the underline match text width */
+  }
+
+  .mdx-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--revenue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-out;
+  }
+
+  .is-underlined.mdx-heading::after {
+    transform: scaleX(1);
+  }
+</style>
