@@ -12,8 +12,8 @@ export function RevenueMixChart() {
     const option = {
         title: { text: 'Mix de Ingresos (MRR por Plan)', textStyle: { fontSize: 14 } },
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-        legend: { bottom: 0 },
-        grid: { left: '3%', right: '4%', bottom: '10%', containLabel: true },
+        legend: { bottom: 0, type: 'scroll' },
+        grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
         xAxis: [{ type: 'category', data: financeData.months }],
         yAxis: [{ type: 'value', name: 'MRR ($)', splitLine: { lineStyle: { type: 'dashed' } } }],
         series: [
@@ -30,8 +30,8 @@ export function OpexStackChart() {
     const option = {
         title: { text: 'Estructura OPEX', textStyle: { fontSize: 14 } },
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-        legend: { bottom: 0 },
-        grid: { left: '3%', right: '4%', bottom: '10%', containLabel: true },
+        legend: { bottom: 0, type: 'scroll' },
+        grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
         xAxis: [{ type: 'category', data: financeData.months }],
         yAxis: [{ type: 'value', name: 'Costes ($)', splitLine: { lineStyle: { type: 'dashed' } } }],
         series: [
@@ -79,13 +79,14 @@ export function UseOfFundsPieChart() {
         },
         legend: {
             bottom: 0,
-            textStyle: { fontSize: 12 }
+            textStyle: { fontSize: 11 },
+            type: 'scroll'
         },
         series: [
             {
                 type: 'pie',
-                radius: ['40%', '70%'],
-                center: ['50%', '45%'],
+                radius: ['35%', '65%'],
+                center: ['50%', '42%'],
                 avoidLabelOverlap: true,
                 itemStyle: {
                     borderRadius: 6,
@@ -139,7 +140,7 @@ export function MilestonesTimeline() {
             data: months,
             axisTick: { alignWithLabel: true },
             axisLine: { lineStyle: { color: '#e2e8f0', width: 2 } },
-            axisLabel: { color: '#64748b', fontSize: 11 },
+            axisLabel: { color: '#64748b', fontSize: 10, interval: 'auto', rotate: 45 },
             splitLine: { show: false }
         },
         yAxis: {
@@ -205,8 +206,8 @@ export function HistoricalMrrChart() {
                 return s;
             }
         },
-        legend: { bottom: 0, textStyle: { fontSize: 11 } },
-        grid: { left: '3%', right: '5%', top: '10%', bottom: '15%', containLabel: true },
+        legend: { bottom: 0, textStyle: { fontSize: 10 }, type: 'scroll' },
+        grid: { left: '2%', right: '5%', top: '10%', bottom: '20%', containLabel: true },
         xAxis: {
             type: 'category',
             data: months,
@@ -637,7 +638,8 @@ export function GeoDistributionChart() {
                 echarts.use([MapChart, TooltipComponent, VisualMapComponent, GeoComponent, SVGRenderer]);
 
                 // Fetch world GeoJSON
-                const res = await fetch('/data/world.json?v=3');
+                const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
+                const res = await fetch(`${base}/data/world.json?v=3`);
                 const worldJson = await res.json();
                 echarts.registerMap('world', worldJson);
                 echartsRef.current = echarts;

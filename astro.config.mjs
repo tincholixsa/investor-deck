@@ -6,5 +6,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+  base: '/investor',
+  trailingSlash: 'always',
   integrations: [react(), mdx()]
 });
